@@ -1,0 +1,9 @@
+[user]
+	name = Rien Maertens
+	email = maertensrien@gmail.com
+[core]
+	editor = vim
+[push]
+	default = simple
+[color]
+	ui = auto

@@ -9,10 +9,18 @@ alias clip='xclip -sel clip <'
 alias cat='lolcat'
 
 # Systemctl
-alias sctl='sudo systemctl'
+alias sctl='systemctl'
 
 # Zeus Music
 alias mocz='PULSE_SERVER=ZEVEN mocp'
+
+# Pacaur things
+alias p='pacaur'
+alias pS='pacaur -S'
+alias pSS='pacaur -Ss'
+alias pRns='pacaur -Rns'
+alias pQs='pacaur -Qs'
+alias pSyu='pacaur -Syu'
 
 # CPU Commands
 alias watchcpu='watch grep \"cpu MHz\" /proc/cpuinfo'
@@ -61,3 +69,4 @@ alias la='ll -A'           #  Show hidden files.
 # Other
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 alias bc='bc -l'
+alias off='sudo poweroff'

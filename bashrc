@@ -2,8 +2,15 @@
 [ -z "$PS1" ] && return
 PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:$PATH"
 
+# Shortcuts
+alias samenvatting='cd /home/rien/Development/Latex/samenvattingen/'
+
 # file to clipboard
 alias clip='xclip -sel clip <'
+
+# Take a screeshot and upload it to my server
+alias shot='bash ~/scripts/shot.sh'
+alias shots='shot -s'
 
 # lol
 alias cat='lolcat'

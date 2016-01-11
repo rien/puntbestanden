@@ -3,8 +3,8 @@ set -e
 
 user="rien"
 hostname="rxn.be"
-location="/srv/http/shot.rxn.be"
-webadress="http://shot.rxn.be"
+location="/srv/http/ss.rxn.be"
+webadress="http://ss.rxn.be"
 
 # Make a random file
 file="$(mktemp XXXX.png)"

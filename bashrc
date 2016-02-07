@@ -29,6 +29,10 @@ alias pRns='pacaur -Rns'
 alias pQs='pacaur -Qs'
 alias pSyu='pacaur -Syu'
 
+# SSH to servers
+alias glados='ssh glados.rxn.be'
+alias spacecore='ssh spacecore.rxn.be'
+
 # CPU Commands
 alias watchcpu='watch grep \"cpu MHz\" /proc/cpuinfo'
 

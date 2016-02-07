@@ -37,6 +37,8 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+cmap w!! w !sudo tee > /dev/null %
+
 map <Esc><Esc> :w<CR>
 nmap :wl \ll
 imap <F12> <Esc>:w<CR>\ll

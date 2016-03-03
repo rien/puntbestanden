@@ -1,9 +1,13 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
 PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:$PATH"
+
+# Neovim!
+alias vim='nvim'
 
 # Shortcuts
 alias samenvatting='cd /home/rien/Development/Latex/samenvattingen/'
+
+# Matlab!
+alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
 
 # file to clipboard
 alias clip='xclip -sel clip <'
@@ -65,6 +69,7 @@ alias egrep='egrep --color=auto'
 
 # Add colors for filetype and  human-readable sizes by default on 'ls':
 alias ls='ls -h --color'
+alias l='ls -Alhk'         #  Woopwoop
 alias lx='ls -lXB'         #  Sort by extension.
 alias lk='ls -lSr'         #  Sort by size, biggest last.
 alias lt='ls -ltr'         #  Sort by date, most recent last.
@@ -81,3 +86,4 @@ alias la='ll -A'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 alias bc='bc -l'
 alias off='sudo poweroff'
+

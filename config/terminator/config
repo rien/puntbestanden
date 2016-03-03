@@ -1,5 +1,6 @@
 [global_config]
   focus = system
+  title_font = Sans 40
   title_transmit_bg_color = "#d30102"
 [keybindings]
 [layouts]
@@ -17,6 +18,13 @@
     background_image = None
     font = Monospace 12
     show_titlebar = False
+    use_system_font = False
+  [[Galaxy]]
+    background_color = "#1d2837"
+    background_image = /home/rien/Pictures/Projects/CE4r5vR.jpg
+    cursor_color = "#bbbbbb"
+    foreground_color = "#ffffff"
+    palette = "#000000:#f9555f:#21b089:#fef02a:#589df6:#944d95:#1f9ee7:#bbbbbb:#555555:#fa8c8f:#35bb9a:#ffff55:#589df6:#e75699:#3979bc:#ffffff"
   [[solarized-dark]]
     background_color = "#002b36"
     background_darkness = 0.89

@@ -1,0 +1,17 @@
+host wells
+    hostname kelder.zeus.ugent.be
+    port 2222
+    user rienspy
+
+host glados
+    hostname glados.rxn.be
+    port 2222
+    user rien
+
+host spacecore
+    hostname spacecore.rxn.be
+    port 22
+    user rien
+
+host *
+    ForwardAgent yes

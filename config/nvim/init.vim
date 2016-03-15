@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'lervag/vimtex'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'jpo/vim-railscasts-theme'
 Plug 'blueshirts/darcula'
@@ -18,6 +19,10 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Persistent undo
+set undofile
+set undodir=~/.vimundo/
 
 " Other formatting
 syntax enable
@@ -35,20 +40,7 @@ cmap w!! w !sudo tee > /dev/null %
 " Write by pressing escape a lot
 map <Esc><Esc> :w<CR>
 
-" Write and run pdflatex
-nmap :wl \ll
-
-" Same, but with F12
-imap <F12> <Esc>:w<CR>\ll
-
-
 filetype plugin indent on
-set grepprg=grep\ -H\ $*
-let g:tex_flavor = "pdflatex"
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_ViewRuleComplete_pdf = 'xdg-open $*.pdf 2>&1 > /dev/null &'
-let g:Tex_MultipleCompileFormats='pdf, aux'
-noremap <C-t> :NERDTreeToggle<CR><CR>
 
 autocmd FileType javascript call JavaScriptHook()
 
@@ -59,6 +51,7 @@ function JavaScriptHook()
 endfunction
 
 " #JustNerdTreeThings
+noremap <C-t> :NERDTreeToggle<CR><CR>
 let NERDTreeIgnore = ['\.pyc$', '\.hi', '\.o']
 let NERDTreeShowHidden=1
 

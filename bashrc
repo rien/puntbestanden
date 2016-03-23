@@ -3,9 +3,6 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:
 # Neovim!
 alias vim='nvim'
 
-# Shortcuts
-alias samenvatting='cd /home/rien/Development/Latex/samenvattingen/'
-
 # Matlab!
 alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
 
@@ -16,26 +13,11 @@ alias clip='xclip -sel clip <'
 alias shot='bash ~/scripts/shot.sh'
 alias shots='shot -s'
 
-# lol
-alias cat='lolcat'
-
 # Systemctl
 alias sctl='systemctl'
 
 # Zeus Music
 alias mocz='PULSE_SERVER=ZEVEN mocp'
-
-# Pacaur things
-alias p='pacaur'
-alias pS='pacaur -S'
-alias pSS='pacaur -Ss'
-alias pRns='pacaur -Rns'
-alias pQs='pacaur -Qs'
-alias pSyu='pacaur -Syu'
-
-# SSH to servers
-alias glados='ssh glados.rxn.be'
-alias spacecore='ssh spacecore.rxn.be'
 
 # CPU Commands
 alias watchcpu='watch grep \"cpu MHz\" /proc/cpuinfo'
@@ -87,3 +69,6 @@ alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 alias bc='bc -l'
 alias off='sudo poweroff'
 
+function ebc {
+    echo $1 | bc -l
+}

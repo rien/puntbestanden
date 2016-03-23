@@ -40,6 +40,9 @@ cmap w!! w !sudo tee > /dev/null %
 " Write by pressing escape a lot
 map <Esc><Esc> :w<CR>
 
+let maplocalleader = '\'
+
+
 filetype plugin indent on
 
 autocmd FileType javascript call JavaScriptHook()

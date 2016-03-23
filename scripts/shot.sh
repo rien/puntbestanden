@@ -2,7 +2,7 @@
 set -e
 
 user="rien"
-hostname="glados"
+hostname="space"
 location="/srv/http/ss.rxn.be"
 webadress="http://ss.rxn.be"
 

@@ -3,12 +3,22 @@ host wells
     port 2222
     user rienspy
 
+host king
+    hostname zeus.ugent.be
+    port 2222
+    user root
+
 host glados
     hostname glados.rxn.be
     port 2222
     user rien
 
 host spacecore
+    hostname spacecore.rxn.be
+    port 22
+    user rien
+
+host space
     hostname spacecore.rxn.be
     port 22
     user rien

@@ -1,5 +1,8 @@
 PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
 
+# Open stuff
+alias o='xdg-open'
+
 # Neovim!
 alias vim='nvim'
 
@@ -27,6 +30,10 @@ alias turbo='echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo'
 alias powersave='sudo cpupower frequency-set -g powersave && noturbo'
 alias performance='sudo cpupower frequency-set -g performance && turbo'
 alias normal='sudo cpupower frequency-set -g powersave && turbo'
+
+# Android Debug Bridge
+alias adbrestart='sudo adb kill-server && sudo adb start-server'
+alias adb='sudo adb'
 
 #UGent VPN
 alias vu='sudo vpnc /root/vpnc.conf'

@@ -79,3 +79,5 @@ alias off='sudo poweroff'
 function ebc {
     echo $1 | bc -l
 }
+
+eval $(thefuck --alias)

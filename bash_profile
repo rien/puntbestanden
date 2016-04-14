@@ -58,5 +58,5 @@ PS1="$BLUE[$NC $PCT\u$BLUE@$NC$BBLUE\h $BLUE]$NC $BCYAN\W$NC $PCT$SIGN $NC"
 
 #Load .bashrc
 if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+  source ~/.bashrc
 fi

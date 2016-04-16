@@ -11,6 +11,8 @@ Plug 'lervag/vimtex'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'jpo/vim-railscasts-theme'
 Plug 'blueshirts/darcula'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 

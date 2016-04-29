@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+set autoread
+
 " Use HJKL
 noremap <Up> <NOP>
 noremap <Down> <NOP>

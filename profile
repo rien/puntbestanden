@@ -45,9 +45,9 @@ alias vu='sudo vpnc /root/vpnc.conf'
 alias vd='sudo vpnc-disconnect'
 
 #Run these commands in interactive mode:
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -Iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
 

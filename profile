@@ -20,10 +20,18 @@ alias clip='xclip -sel clip <'
 alias shot='bash ~/scripts/shot.sh'
 alias shots='shot -s'
 
-# Systemctl
-alias sctl='systemctl'
+# Git
+alias gs='git status'
+alias gsh='git stash'
+alias gshd='git stash drop'
+alias ga='git add -vu'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit -a'
+alias gcam='git commit -am'
+alias gpp='git pull && git push'
 
-# Zeus Music
+# Zeus
 alias mocz='PULSE_SERVER=ZEVEN mocp'
 alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
 

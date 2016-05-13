@@ -21,7 +21,7 @@ alias shot='bash ~/scripts/shot.sh'
 alias shots='shot -s'
 
 # Git
-alias gs='git status'
+alias gs='git status --short'
 alias gsh='git stash'
 alias gshd='git stash drop'
 alias ga='git add -vu'

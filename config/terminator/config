@@ -4,6 +4,21 @@
   title_font = Sans 40
   title_transmit_bg_color = "#d30102"
 [keybindings]
+  broadcast_all = <Primary><Shift><Alt>a
+  broadcast_group = <Primary><Shift><Alt>g
+  broadcast_off = <Primary><Shift><Alt>o
+  cycle_next = <Primary><Shift><Alt>Tab
+  edit_window_title = <Primary><Shift><Alt>t
+  go_down = <Primary><Shift><Alt>Down
+  go_left = <Primary><Shift><Alt>Left
+  go_next = <Primary><Shift><Alt>n
+  go_prev = <Primary><Shift><Alt>p
+  go_right = <Primary><Shift><Alt>Right
+  go_up = <Primary><Shift><Alt>Left
+  group_all = <Primary><Shift><Alt>g
+  layout_launcher = <Primary><Shift><Alt>l
+  zoom_in = <Primary><Shift><Alt>plus
+  zoom_out = <Primary><Alt>minus
 [layouts]
   [[default]]
     [[[child1]]]
@@ -21,6 +36,7 @@
     background_image = None
     background_type = transparent
     cursor_color = "#eee8d5"
+    custom_command = env TERM=xterm-256color /usr/bin/zsh
     font = Roboto Mono 12
     foreground_color = "#eee8d5"
     login_shell = True
@@ -28,6 +44,7 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_custom_command = True
     use_system_font = False
   [[Galaxy]]
     background_color = "#1d2837"
@@ -41,6 +58,7 @@
     background_image = None
     background_type = transparent
     cursor_color = "#eee8d5"
+    custom_command = env TERM=xterm-256color /usr/bin/zsh
     font = Roboto Mono 12
     foreground_color = "#eee8d5"
     login_shell = True
@@ -48,6 +66,7 @@
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_custom_command = True
     use_system_font = False
   [[solarized-light]]
     background_color = "#eee8d5"

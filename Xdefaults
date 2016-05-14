@@ -42,11 +42,6 @@ URxvt*letterSpace: -1
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
-! Perl extensions
-URxvt.perl-ext-common:      default,matcher
-URxvt.matcher.button:       1
-URxvt.urlLauncher:          chromium
-
 ! Cursor
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83

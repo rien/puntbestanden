@@ -49,6 +49,7 @@ scaling-factor=uint32 0
 first-day-of-week=1
 icon-theme='Numix-Circle'
 gtk-theme='Numix-Frost'
+toolkit-accessibility=false
 
 [desktop/keybindings/custom-keybindings/custom0]
 binding=['<Super>g']
@@ -57,8 +58,8 @@ name='Chromium'
 
 [desktop/keybindings/custom-keybindings/custom1]
 binding=['<Primary><Alt>t']
-command='terminator'
-name='Terminator'
+command='urxvt'
+name='URXVT'
 
 [desktop/keybindings/custom-keybindings/custom2]
 binding=['<Super>1']
@@ -112,7 +113,7 @@ name='Ranger UGent'
 
 [desktop/keybindings]
 looking-glass-keybinding=@as []
-custom-list=['custom0', 'custom1', 'custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom8', 'custom9', 'custom10', 'custom11']
+custom-list=['custom0', 'custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom8', 'custom9', 'custom10', 'custom11', 'custom1']
 
 [desktop/keybindings/media-keys]
 terminal=@as []
@@ -121,6 +122,7 @@ home=@as []
 
 [desktop/keybindings/wm]
 switch-to-workspace-right=['<Control><Alt>Right', '<Primary><Alt>dead_acute']
+maximize=['F11']
 switch-to-workspace-left=['<Control><Alt>Left', '<Primary><Alt>l']
 
 [desktop/media-handling]
@@ -146,11 +148,27 @@ theme='Numix-ArchBlue'
 num-workspaces=5
 titlebar-font='Roboto Light 12'
 
+[desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
 [desktop/a11y/keyboard]
 togglekeys-enable=true
 
+[desktop/a11y/mouse]
+secondary-click-enabled=false
+secondary-click-time=1.2
+dwell-time=1.2
+dwell-threshold=10
+dwell-click-enabled=false
+
+[desktop/sound]
+volume-sound-file='/usr/share/cinnamon/sounds/nootnoot.oga'
+volume-sound-enabled=true
+event-sounds=true
+
 [desktop/background]
-picture-uri='file:///home/rien/Pictures/Wallpapers/archos_by_deadmetaler-d98ucvh.png'
+picture-uri='file:///home/rien/Pictures/Wallpapers/Space/SpaceX/justread.jpg'
 color-shading-type='solid'
 primary-color='#000000'
 picture-options='zoom'
@@ -158,6 +176,12 @@ secondary-color='#000000'
 
 [desktop/background/slideshow]
 image-source='directory:///home/rien/Pictures'
+
+[sounds]
+plug-file='/usr/share/cinnamon/sounds/AIRHORN.oga'
+unplug-enabled=true
+plug-enabled=true
+unplug-file='/usr/share/cinnamon/sounds/2SED4AIRHORN.oga'
 
 [theme]
 name='Numix-Frost'

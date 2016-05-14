@@ -26,6 +26,9 @@ URxvt.internalBorder:       0
 URxvt.lineSpace:            0
 URxvt*.transparent: false
 URxvt*termName: screen-256color
+URxvt*iso14755: false
+
+URxvt.perl-ext-common: default,-searchable-scrollback
 
 ! Fonts
 URxvt.allow_bold:           true

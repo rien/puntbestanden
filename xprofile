@@ -1,6 +1,6 @@
 
 # No pink terminals anymore!
-xrdb "$HOME/.Xdefaults"
+xrdb "$HOME/.Xresources"
 
 urxvtd &
 

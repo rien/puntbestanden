@@ -5,10 +5,6 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:
 # Start in tmux
 [[ -z "$TMUX" ]] && exec tmux
 
-# Keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
 # Open stuff
 alias o='xdg-open'
 
@@ -31,6 +27,7 @@ alias gs='git status --short'
 alias gsh='git stash'
 alias gshd='git stash drop'
 alias ga='git add -vu'
+alias gA='git add -vA'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -a'

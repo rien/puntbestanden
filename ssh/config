@@ -19,7 +19,12 @@ host king
     user root
 
 host glados
-    hostname glados.rxn.be
+    hostname rxn.be
+    port 2223
+    user rien
+    
+host glados.local
+    hostname 192.168.1.33
     port 2222
     user rien
 

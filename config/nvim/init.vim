@@ -13,6 +13,9 @@ Plug 'lervag/vimtex'
 Plug 'blueshirts/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'neomake/neomake'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -46,12 +49,19 @@ map <Esc><Esc> :w<CR>
 
 let maplocalleader = '\'
 
+" Latex allow escape
+let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'
+
 
 filetype plugin indent on
 
-autocmd FileType javascript call JavaScriptHook()
+autocmd FileType javascript call WebDevHook()
+autocmd FileType html call WebDevHook()
+autocmd FileType ruby call WebDevHook()
+autocmd FileType yaml call WebDevHook()
+autocmd FileType eruby call WebDevHook()
 
-function JavaScriptHook()
+function WebDevHook()
     setlocal tabstop=2
     setlocal shiftwidth=2
     setlocal softtabstop=2

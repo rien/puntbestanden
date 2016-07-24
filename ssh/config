@@ -3,13 +3,29 @@ host wells
     port 2222
     user rienspy
 
+host clarke
+    user root
+
+host anarchy
+    user root
+
+host token
+    hostname kelder.zeus.ugent.be
+    port 2224
+    user root
+
+host token.local
+    hostname 10.1.2.1
+    port 2224
+    user root
+
 host verne
     hostname kelder.zeus.ugent.be
     port 2223
     user root
 
 host verne.local
-    hostname verne
+    hostname 10.1.2.69
     port 2223
     user root
 
@@ -19,8 +35,8 @@ host king
     user root
 
 host glados
-    hostname rxn.be
-    port 2223
+    hostname glados.rxn.be
+    port 2222
     user rien
     
 host glados.local
@@ -28,12 +44,7 @@ host glados.local
     port 2222
     user rien
 
-host spacecore
-    hostname spacecore.rxn.be
-    port 2222
-    user rien
-
-host space
+host spacecore space
     hostname spacecore.rxn.be
     port 2222
     user rien

@@ -1,9 +1,16 @@
-PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
 
 # If not running interactively, do nothing
 [[ $- != *i* ]] && return
 # Start in tmux
 [[ -z "$TMUX" ]] && exec tmux
+PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
+
+#export RBENV_ROOT="$HOME/.rbenv"
+#
+#if [ -d $RBENV_ROOT ]; then
+#    export PATH="$RBENV_ROOT/bin:$PATH"
+#    eval "$(rbenv init -)"
+#fi
 
 # Open stuff
 alias o='xdg-open'
@@ -36,7 +43,8 @@ alias gpp='git pull && git push'
 alias gl="log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Zeus
-alias mocz='PULSE_SERVER=ZEVEN mocp'
+alias mocz='PULSE_SERVER=ZEVEN cmus'
+alias cmuz='PULSE_SERVER=ZEVEN cmus'
 alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
 
 # CPU Commands
@@ -94,7 +102,9 @@ alias bc='bc -l'
 alias off='sudo poweroff'
 
 function ebc {
-    echo $1 | bc -l
+echo $1 | bc -l
 }
 
 eval $(thefuck --alias)
+eval "$(rbenv init -)"
+export ANSIBLE_INVENTORY=~/Development/Ansible/ansible_hosts

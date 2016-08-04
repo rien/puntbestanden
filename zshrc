@@ -58,15 +58,6 @@ ZSH_CUSTOM=$HOME/puntbestanden/zsh_custom
 plugins=(git)
 #plugins=(zsh-autosuggestions)
 
-# User configuration
-
-  export PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-#HCC CLAMP
-export HCC_HOME="/opt/hcc"
-export PATH="$HCC_HOME/bin:$PATH"
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

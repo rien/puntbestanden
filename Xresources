@@ -32,14 +32,10 @@ URxvt.perl-ext-common: default,-searchable-scrollback
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt.font:           xft:Roboto Mono:pixelsize=17:antialias=true,xft:Droid Sans Mono Slashed for Powerline:pixelsize=17:antialias=true
-URxvt.imFont:         xft:Roboto Mono:pixelsize=17:antialias=true,xft:Droid Sans Mono Slashed for Powerline:pixelsize=17:antialias=true
-URxvt.boldFont:       xft:Roboto Mono:pixelsize=17:antialias=true,xft:Droid Sans Mono Slashed for Powerline:pixelsize=17:antialias=true
-URxvt.italicFont:     xft:Roboto Mono:pixelsize=17:antialias=true,xft:Droid Sans Mono Slashed for Powerline:pixelsize=17:antialias=true
-URxvt.boldItalicFont: xft:Roboto Mono:pixelsize=17:antialias=true,xft:Droid Sans Mono Slashed for Powerline:pixelsize=17:antialias=true
+URxvt.font:           xft:Source Code Pro:pixelsize=18:antialias=true
 
 ! Fix font spaaaaaace
-URxvt*letterSpace: -1
+! URxvt*letterSpace: 1
 
 ! Scrollbar
 URxvt.scrollStyle:          rxvt

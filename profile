@@ -5,13 +5,6 @@
 [[ -z "$TMUX" ]] && exec tmux
 PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
 
-#export RBENV_ROOT="$HOME/.rbenv"
-#
-#if [ -d $RBENV_ROOT ]; then
-#    export PATH="$RBENV_ROOT/bin:$PATH"
-#    eval "$(rbenv init -)"
-#fi
-
 # Open stuff
 alias o='xdg-open'
 
@@ -22,7 +15,9 @@ alias vim='nvim'
 # Matlab!
 alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
 
-# file to clipboard
+# Clipboard stuff
+alias showclip='xclip -o -sel clip'
+alias paste='xlip -o -sel clip >'
 alias clip='xclip -sel clip <'
 
 # Take a screeshot and upload it to my server
@@ -65,7 +60,7 @@ alias vu='sudo vpnc /root/vpnc.conf'
 alias vd='sudo vpnc-disconnect'
 
 #Run these commands in interactive mode:
-alias rm='rm -Iv'
+alias rm='rm --interactive=once -v'
 alias cp='cp -iv'
 alias mv='mv -iv'
 # -> Prevents accidentally clobbering files.
@@ -92,19 +87,27 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 
 # The ubiquitous 'll': directories first, with alphanumeric sorting:
 alias ll="ls -lv --group-directories-first"
-alias lm='ll | less'        #  Pipe through 'more'
+alias lm='ll | less'       #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
 
 # Other
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 alias bc='bc -l'
-alias off='sudo poweroff'
+alias off='sudo poweroff'  #  Don't accidentally shut down severs
 
+# ebc '1 + 1'
+# > 2
 function ebc {
 echo $1 | bc -l
 }
 
+# Init some things
 eval $(thefuck --alias)
 eval "$(rbenv init -)"
+
+# Enviroment variables
 export ANSIBLE_INVENTORY=~/Development/Ansible/ansible_hosts
+export DEFAULT_USER=rien
+export EDITOR=/usr/bin/nvim
+export TERMINAL=/usr/bin/urxvt

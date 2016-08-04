@@ -9,6 +9,9 @@ host clarke
 host anarchy
     user root
 
+host abyss
+    user root
+
 host token
     hostname kelder.zeus.ugent.be
     port 2224
@@ -34,18 +37,18 @@ host king
     port 2222
     user root
 
-host glados
-    hostname glados.rxn.be
+host vulthuryol vul
+    hostname vulthuryol.rxn.be
     port 2222
     user rien
     
-host glados.local
+host vulthuryol.local vul.local
     hostname 192.168.1.33
     port 2222
     user rien
 
-host spacecore space
-    hostname spacecore.rxn.be
+host paarthurnax paar
+    hostname paarthurnax.rxn.be
     port 2222
     user rien
 

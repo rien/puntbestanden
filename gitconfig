@@ -1,6 +1,7 @@
 [user]
 	name = Rien Maertens
 	email = maertensrien@gmail.com
+	signingkey = 69D7E4109F246A3F
 [core]
 	editor = nvim
 [push]

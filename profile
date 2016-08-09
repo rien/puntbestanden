@@ -107,7 +107,7 @@ eval $(thefuck --alias)
 eval "$(rbenv init -)"
 
 # Enviroment variables
-export ANSIBLE_INVENTORY=~/Development/Ansible/ansible_hosts
+export ANSIBLE_INVENTORY=~/Development/Sysadmin/Ansible/ansible_hosts
 export DEFAULT_USER=rien
 export EDITOR=/usr/bin/nvim
 export TERMINAL=/usr/bin/urxvt

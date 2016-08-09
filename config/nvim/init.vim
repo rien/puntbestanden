@@ -47,6 +47,8 @@ cmap w!! w !sudo tee > /dev/null %
 " Write by pressing escape a lot
 map <Esc><Esc> :w<CR>
 
+map <C-s>:set hls!<CR>
+
 let maplocalleader = '\'
 
 " Latex allow escape

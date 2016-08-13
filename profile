@@ -35,7 +35,7 @@ alias gcm='git commit -m'
 alias gca='git commit -a'
 alias gcam='git commit -am'
 alias gpp='git pull && git push'
-alias gl="log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 # Zeus
 alias mocz='PULSE_SERVER=ZEVEN cmus'

@@ -52,5 +52,10 @@ host paarthurnax paar
     port 2222
     user rien
 
+host we12s300 s300
+    hostname we12s300
+    user rien
+    port 1048
+
 host *
     ForwardAgent yes

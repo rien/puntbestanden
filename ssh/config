@@ -47,9 +47,9 @@ host vulthuryol.local vul.local
     port 2222
     user rien
 
-host paarthurnax paar
-    hostname paarthurnax.rxn.be
-    port 2222
+host duvel droplet do
+    hostname rxn.be
+    port 9450
     user rien
 
 host we12s300 s300

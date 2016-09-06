@@ -8,18 +8,24 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'lervag/vimtex'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'jpo/vim-railscasts-theme'
 Plug 'blueshirts/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'neomake/neomake'
-"Plug 'vim-pandoc/vim-pandoc'
-"Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'takac/vim-hardtime'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
 set autoread
+
+" hardtime: break habits
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_allow_different_key = 1
+
+" easymotion
+map <Leader> <Plug>(easymotion-prefix)
+
 
 " Use HJKL
 noremap <Up> <NOP>
@@ -36,10 +42,18 @@ syntax enable
 set background=dark
 colorscheme darcula
 set number
+set showcmd
+set autoread
+set scrolloff=8
 set linebreak
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+" display tabs with a leading \cdot
+" trailing whitespace looks like \cdot
+set list
+set listchars=tab:·\ ,trail:·
 
 " Write as root
 cmap w!! w !sudo tee > /dev/null %
@@ -50,7 +64,10 @@ map <Esc><Esc> :w<CR>
 " Unhighlight highlighted stuff
 map <C-s> :noh<CR>
 
-let maplocalleader = '\'
+" Copy/paste with X11 CLIPBOARD
+set clipboard=unnamedplus
+
+let mapleader = '\'
 
 " Latex allow escape
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'

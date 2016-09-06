@@ -32,22 +32,27 @@ host verne.local
     port 2223
     user root
 
+host verne-beta
+    hostname verne-beta.kelder.zeus.ugent.be
+    port 2222
+    user root
+
 host king
     hostname zeus.ugent.be
     port 2222
     user root
 
-host vulthuryol vul
-    hostname vulthuryol.rxn.be
+host marnix
+    hostname marnix.rxn.be
     port 2222
     user rien
     
-host vulthuryol.local vul.local
+host marnix.local
     hostname 192.168.1.33
     port 2222
     user rien
 
-host duvel droplet do
+host gunnar droplet do
     hostname rxn.be
     port 9450
     user rien

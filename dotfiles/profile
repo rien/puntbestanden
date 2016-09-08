@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return
 # Start in tmux
 [[ -z "$TMUX" ]] && exec tmux
-PATH="$(ruby -e 'print Gem.user_dir')/bin:/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
+export PATH="/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
 
 # Open stuff
 alias o='xdg-open'
@@ -12,8 +12,11 @@ alias o='xdg-open'
 alias vi='nvim'
 alias vim='nvim'
 
-# Matlab!
+# Matlab CLI
 alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
+
+# Steam
+alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam > /dev/null 2>&1 &"
 
 # Clipboard stuff
 alias showclip='xclip -o -sel clip'
@@ -25,9 +28,10 @@ alias shot='bash ~/scripts/shot.sh'
 alias shots='shot -s'
 
 # Git
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gs='git status --short'
-alias gsh='git stash'
-alias gshd='git stash drop'
+alias gsd='git stash && git stash drop'
 alias ga='git add -vu'
 alias gA='git add -vA'
 alias gc='git commit'

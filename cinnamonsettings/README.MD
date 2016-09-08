@@ -1,6 +1,6 @@
 From a terminal, run:
 
-`dconf dump /org/cinnamon/ > mysettings`
+`dconf dump /org/cinnamon/ > settings.dump`
 
 save the `mysettings` file somewhere for later
 
@@ -12,6 +12,6 @@ Note, cinnamon may freeze or crash doing this
 
 To restore all your settings:
 
-`dconf load /org/cinnamon/ < mysettings`
+`dconf load /org/cinnamon/ < settings.dump`
 
-Again, cinnamon may freeze crash after this (recommend at least logging out/back in)<Paste>
+Again, cinnamon may freeze crash after this (recommend at least logging out/back in)

@@ -2,9 +2,9 @@
 set -e
 
 user="rien"
-hostname="space"
-location="/srv/http/ss.rxn.be"
-webadress="http://ss.rxn.be"
+hostname="marnix"
+location="/srv/http/screenshots"
+webadress="http://i.rxn.be"
 
 # Make a random file
 file="$(mktemp XXXX.png)"

@@ -81,9 +81,9 @@ gtk-theme='Adapta-Nokto'
 clock-show-date=true
 
 [desktop/keybindings/custom-keybindings/custom0]
-binding=['<Super>g']
-command='/usr/bin/chromium'
-name='Chromium'
+binding=['<Super>f']
+command='/usr/bin/firefox'
+name='Firefox'
 
 [desktop/keybindings/custom-keybindings/custom1]
 binding=['<Primary><Alt>t']
@@ -132,7 +132,7 @@ name='Explorer UGent'
 
 [desktop/keybindings]
 looking-glass-keybinding=@as []
-custom-list=['custom0', 'custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom10', 'custom11', 'custom1']
+custom-list=['custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom10', 'custom11', 'custom1', 'custom0']
 
 [desktop/keybindings/media-keys]
 terminal=@as []

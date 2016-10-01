@@ -9,7 +9,7 @@ if [[ -z "$SSH_CONNECTION" ]]
 then
 ## CLIENT ##
 
-    exec tmux
+    [[ -z "$TMUX" ]] && exec tmux
 
     # Open stuff
     alias o='xdg-open'
@@ -49,7 +49,7 @@ true
 fi
 ## COMMON ##
 
-#UGent VPN
+# UGent VPN
 alias vu='sudo vpnc /root/vpnc.conf'
 alias vd='sudo vpnc-disconnect'
 
@@ -76,24 +76,11 @@ alias gpp='git pull && git push'
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 
 
-#Run these commands in interactive mode:
+# Run these commands in interactive mode:
 alias cp='cp -iv'
 alias mv='mv -iv'
 # Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
-
-# rm: show files to be removed and ask for confirmation once
-function irm {
-    local args=("$@")
-    local recurse=''
-    # 'false'
-    local i=1
-    while [ $i -le ${#args[*]} ] && [ -z $recurse ]
-    do
-        recurse="$(echo ${args[$i]} | grep '^-.*r')"
-        i=$((i+1))
-    done
-}
 
 # Easier directory jumping
 alias ..='cd ..'

@@ -5,7 +5,7 @@
 export PATH="/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
 
 # Different aliases and inits for servers and clients
-if [[ -z "$TMUX" ]] || [[ -z "$SSH_CONNECTION" ]]
+if [[ -z "$SSH_CONNECTION" ]]
 then
 ## CLIENT ##
 

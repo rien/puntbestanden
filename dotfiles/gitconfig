@@ -1,10 +1,16 @@
 [user]
-	name = Rien Maertens
-	email = maertensrien@gmail.com
-	signingkey = 69D7E4109F246A3F
+    name = Rien Maertens
+    email = maertensrien@gmail.com
+    signingkey = 69D7E4109F246A3F
 [core]
-	editor = nvim
+    editor = nvim
 [push]
-	default = simple
+    default = simple
 [color]
-	ui = auto
+    ui = auto
+
+# Enforce SSH
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[url "ssh://git@github.ugent.be/"]
+  insteadOf = https://github.ugent.be/

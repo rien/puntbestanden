@@ -1,12 +1,9 @@
-host wells
+host wells w
     hostname kelder.zeus.ugent.be
     port 2222
     user rienspy
 
 host clarke
-    user root
-
-host anarchy
     user root
 
 host abyss
@@ -22,12 +19,12 @@ host token.local
     port 2224
     user root
 
-host verne
+host verne v
     hostname kelder.zeus.ugent.be
     port 2223
     user root
 
-host verne.local
+host verne.local vl
     hostname 10.1.2.69
     port 2223
     user root
@@ -37,22 +34,27 @@ host verne-beta
     port 2222
     user root
 
-host king
+host king k
     hostname zeus.ugent.be
     port 2222
     user root
 
-host marnix
+host adams a
+    hostname adams.ugent.be
+    port 2222
+    user root
+
+host marnix m
     hostname marnix.rxn.be
     port 2222
     user rien
-    
-host marnix.local
+
+host marnix.local ml
     hostname 192.168.1.33
     port 2222
     user rien
 
-host gunnar droplet do
+host gunnar droplet do g
     hostname rxn.be
     port 9450
     user rien
@@ -61,6 +63,10 @@ host we12s300 s300
     hostname we12s300
     user rien
     port 1048
+
+host sko
+    hostname studentkickoff.be
+    user root
 
 host *
     ForwardAgent yes

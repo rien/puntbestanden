@@ -1,10 +1,11 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/rien/.oh-my-zsh
+export ZSH=/home/rien/.oh-my-zsh
 
-# Some global variables
-export DEFAULT_USER=rien
-export EDITOR=nvim
-
+# If oh-my-zsh is not installed, clone it
+if [ ! -d $ZSH ]
+then
+    env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git $ZSH
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

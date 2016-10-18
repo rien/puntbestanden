@@ -56,6 +56,7 @@ alias vd='sudo vpnc-disconnect'
 # Neovim!
 alias vi='nvim'
 alias vim='nvim'
+alias nano='cat /dev/urandom && cat'
 
 # Take a screeshot and upload it to my server
 alias shot='bash ~/scripts/shot.sh'

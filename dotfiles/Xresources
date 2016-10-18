@@ -32,7 +32,7 @@ URxvt.perl-ext-common: default,-searchable-scrollback
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt.font:           xft:Source Code Pro:pixelsize=18:antialias=true
+URxvt.font:           xft:Hasklig:pixelsize=18:antialias=true,xft:Symbola:pixelsize=18:antialias=true
 
 ! Fix font spaaaaaace
 ! URxvt*letterSpace: 1

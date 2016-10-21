@@ -18,7 +18,7 @@ then
     alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
 
     # Steam
-    alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam > /dev/null 2>&1 &"
+    alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam -tcp > /dev/null 2>&1 &"
 
     # Clipboard stuff
     alias showclip='xclip -o -sel clip'

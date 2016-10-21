@@ -44,7 +44,6 @@ then
 
 else
 ## SERVER ##
-true
 
 fi
 ## COMMON ##

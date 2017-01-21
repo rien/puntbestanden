@@ -2,7 +2,7 @@
 # If not running interactively, do nothing
 [[ $- != *i* ]] && return
 
-export PATH="/home/rien/.rbenv/bin:/home/rien/Android/Sdk/platform-tools:/home/rien/Development/Android/CM13/bin:/home/rien/scripts/:$PATH"
+export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:$PATH"
 
 # Different aliases and inits for servers and clients
 if [[ -z "$SSH_CONNECTION" ]]
@@ -10,15 +10,22 @@ then
 ## CLIENT ##
 
     [[ -z "$TMUX" ]] && exec tmux
+    alias windoos='/home/rien/virtual/win10/windoos.sh'
 
     # Open stuff
     alias o='xdg-open'
+
+    # Share Interwobles
+    alias ap='sudo create_ap wlp3s0 enp4s0 Interwubs $(zenity --password)'
+
+    # Start a webserver
+    alias serve='python3 -m http.server 6969'
 
     # Matlab CLI
     alias matlab='/opt/Matlab/bin/matlab -nodesktop -nosplash'
 
     # Steam
-    alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam -tcp > /dev/null 2>&1 &"
+    alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam  > /dev/null 2>&1 &"
 
     # Clipboard stuff
     alias showclip='xclip -o -sel clip'
@@ -44,6 +51,7 @@ then
 
 else
 ## SERVER ##
+    alias poweroff=" echo \"You know you\'re on a server, right?\""
 
 fi
 ## COMMON ##
@@ -56,10 +64,6 @@ alias vd='sudo vpnc-disconnect'
 alias vi='nvim'
 alias vim='nvim'
 alias nano='cat /dev/urandom && cat'
-
-# Take a screeshot and upload it to my server
-alias shot='bash ~/scripts/shot.sh'
-alias shots='shot -s'
 
 # Git
 alias gd='git diff'

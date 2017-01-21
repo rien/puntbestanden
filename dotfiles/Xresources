@@ -32,7 +32,7 @@ URxvt.perl-ext-common: default,-searchable-scrollback
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt.font:           xft:Hasklig:pixelsize=18:antialias=true,xft:Symbola:pixelsize=18:antialias=true
+URxvt.font:           xft:Source Code Pro:pixelsize=18:antialias=true,xft:Symbola:pixelsize=18:antialias=true
 
 ! Fix font spaaaaaace
 ! URxvt*letterSpace: 1
@@ -54,6 +54,7 @@ URxvt.pointerBlank:         true
 *background: #002b36
 *foreground: #657b83
 !!*fading: 40
+!!*URxvt.backgroundPixmap: /home/rien/Pictures/Projects/Dickbot/dickbut_bg.png
 *fadeColor: #002b36
 *cursorColor: #93a1a1
 *pointerColorBackground: #586e75

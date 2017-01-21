@@ -1,5 +1,15 @@
+host beata
+    hostname beata.rxn.be
+    port 9450
+    user root
+
 host wells w
     hostname kelder.zeus.ugent.be
+    port 2222
+    user rienspy
+
+host wells.local
+    hostname wells
     port 2222
     user rienspy
 
@@ -9,29 +19,23 @@ host clarke
 host abyss
     user root
 
-host token
-    hostname kelder.zeus.ugent.be
-    port 2224
-    user root
-
-host token.local
-    hostname 10.1.2.1
-    port 2224
-    user root
-
 host verne v
     hostname kelder.zeus.ugent.be
     port 2223
     user root
 
 host verne.local vl
-    hostname 10.1.2.69
+    hostname 10.1.2.1
     port 2223
     user root
 
 host verne-beta
     hostname verne-beta.kelder.zeus.ugent.be
     port 2222
+    user root
+
+host gygax
+    hostname gygax
     user root
 
 host king k
@@ -44,18 +48,23 @@ host adams a
     port 2222
     user root
 
-host marnix m
-    hostname marnix.rxn.be
+host masjiene m
+    hostname masjiene.rxn.be
     port 2222
     user rien
 
-host marnix.local ml
+host peter.local pl
     hostname 192.168.1.33
     port 2222
     user rien
 
+host peter p
+    hostname peterpi.duckdns.org
+    port 2222
+    user rien
+
 host gunnar droplet do g
-    hostname rxn.be
+    hostname gunnar.rxn.be
     port 9450
     user rien
 
@@ -67,6 +76,10 @@ host we12s300 s300
 host sko
     hostname studentkickoff.be
     user root
+
+host helios
+    hostname helios.ugent.be
+    user rbmaerte
 
 host *
     ForwardAgent yes

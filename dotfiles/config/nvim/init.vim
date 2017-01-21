@@ -11,7 +11,7 @@ Plug 'lervag/vimtex'
 Plug 'blueshirts/darcula'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'takac/vim-hardtime'
+"Plug 'takac/vim-hardtime'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -20,9 +20,9 @@ call plug#end()
 set autoread
 
 " hardtime: break habits
-let g:hardtime_default_on = 1
-let g:hardtime_showmsg = 1
-let g:hardtime_allow_different_key = 1
+"let g:hardtime_default_on = 1
+"let g:hardtime_showmsg = 1
+"let g:hardtime_allow_different_key = 1
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
@@ -70,7 +70,8 @@ set clipboard=unnamedplus
 
 let mapleader = '\'
 
-" Latex allow escape
+" Latex
+let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'
 
 

@@ -1,0 +1,7 @@
+#!/bin/bash
+stdbuf -oL xinput test-xi2 --root | grep "KeyPress[^\r]+\r[^\r]+\r[^:]+:" --line-buffered |
+while read -r line
+do
+    echo $line
+    paplay /home/rien/Music/AIRHORN.wav &
+done

@@ -3,6 +3,8 @@
 [[ $- != *i* ]] && return
 
 export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:$PATH"
+alias vop='cd /home/rien/Development/Java/VOP'
+alias webdev='cd /home/rien/Development/Ruby/itech-pract1'
 
 # Different aliases and inits for servers and clients
 if [[ -z "$SSH_CONNECTION" ]]
@@ -49,12 +51,19 @@ then
     alias adbrestart='sudo adb kill-server && sudo adb start-server'
     alias adb='sudo adb'
 
+    # <3 HTTPie
+    alias https='http --default-scheme=https'
+
+
 else
 ## SERVER ##
     alias poweroff=" echo \"You know you\'re on a server, right?\""
 
 fi
 ## COMMON ##
+
+# Extract tarball
+alias untar='tar -xzvf'
 
 # UGent VPN
 alias vu='sudo vpnc /root/vpnc.conf'

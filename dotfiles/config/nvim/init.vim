@@ -15,9 +15,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-syntastic/syntastic'
+Plug 'slim-template/vim-slim'
 call plug#end()
 
 set autoread
+
+autocmd FileType markdown set spell spelllang=en_us,nl
 
 " hardtime: break habits
 "let g:hardtime_default_on = 1
@@ -26,7 +30,16 @@ set autoread
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
+let g:syntastic_ruby_checkers = ['rubocop']
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Use HJKL
 noremap <Up> <NOP>

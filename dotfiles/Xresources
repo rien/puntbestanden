@@ -55,7 +55,7 @@ URxvt.pointerBlank:         true
 *background: #002b36
 *foreground: #657b83
 !!*fading: 40
-!!*URxvt.backgroundPixmap: /home/rien/Pictures/Projects/Dickbot/dickbut_bg.png
+*URxvt.backgroundPixmap: /home/rien/Pictures/Projects/Dickbot/dickbut_bg.png
 *fadeColor: #002b36
 *cursorColor: #93a1a1
 *pointerColorBackground: #586e75

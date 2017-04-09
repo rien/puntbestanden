@@ -2,32 +2,35 @@
 desktop-effects-unmaximize-transition='easeNone'
 desktop-effects-maximize-transition='easeInExpo'
 desktop-effects-map-effect='traditional'
+workspace-osd-duration=400
 desktop-effects-close-effect='traditional'
-enabled-desklets=@as []
 desktop-effects-unmaximize-time=100
+enabled-desklets=@as []
 desktop-effects-map-time=175
 desktop-effects-minimize-effect='traditional'
-panels-height=['1:30']
-next-applet-id=22
+panels-height=['1:29']
+next-applet-id=23
 panel-launchers=['DEPRECATED']
 desktop-effects-map-transition='easeOutQuad'
-desktop-effects-maximize-time=100
-panels-enabled=['1:0:bottom']
-desktop-effects-tile-transition='easeInQuad'
 desktop-effects-unmaximize-effect='none'
-panels-resizable=['1:true']
+panels-enabled=['1:0:bottom']
+desktop-effects-maximize-time=100
+desktop-effects-tile-transition='easeInQuad'
 desktop-effects-maximize-effect='none'
-enabled-applets=['panel1:left:0:menu@cinnamon.org:19', 'panel1:left:1:panel-launchers@cinnamon.org:2', 'panel1:left:3:window-list@cinnamon.org:3', 'panel1:right:0:notifications@cinnamon.org:4', 'panel1:right:1:systray@cinnamon.org:17', 'panel1:right:2:temperature@fevimu:18', 'panel1:right:10:spacer@cinnamon.org:21', 'panel1:right:4:removable-drives@cinnamon.org:6', 'panel1:right:5:keyboard@cinnamon.org:7', 'panel1:right:6:network@cinnamon.org:9', 'panel1:right:7:sound@cinnamon.org:10', 'panel1:right:8:power@cinnamon.org:11', 'panel1:right:9:calendar@cinnamon.org:13']
+panels-resizable=['1:true']
+enabled-applets=['panel1:left:0:menu@cinnamon.org:19', 'panel1:left:1:panel-launchers@cinnamon.org:2', 'panel1:left:3:window-list@cinnamon.org:3', 'panel1:right:0:notifications@cinnamon.org:4', 'panel1:right:1:systray@cinnamon.org:17', 'panel1:right:2:temperature@fevimu:18', 'panel1:right:10:spacer@cinnamon.org:21', 'panel1:right:4:removable-drives@cinnamon.org:6', 'panel1:right:5:keyboard@cinnamon.org:7', 'panel1:right:6:network@cinnamon.org:9', 'panel1:right:7:sound@cinnamon.org:10', 'panel1:right:8:power@cinnamon.org:11', 'panel1:right:9:calendar@cinnamon.org:13', 'panel1:right:0:workspace-switcher@cinnamon.org:22']
 desktop-effects-minimize-time=200
 alttab-switcher-delay=0
 desktop-effects-tile-effect='none'
 desktop-effects-close-transition='easeOutQuad'
 desktop-effects-minimize-transition='easeInQuad'
 panel-edit-mode=false
-workspace-expo-view-as-grid=true
 show-media-keys-osd='small'
-desktop-effects-close-time=175
+workspace-osd-x=50
 no-adjacent-panel-barriers=false
+desktop-effects-close-time=175
+workspace-osd-y=50
+workspace-expo-view-as-grid=true
 panels-autohide=['1:false']
 desktop-effects-tile-time=100
 
@@ -57,25 +60,42 @@ three-finger-click=2
 two-finger-click=3
 
 [settings-daemon/peripherals/keyboard]
+repeat-interval=uint32 30
+delay=uint32 500
 numlock-state='on'
 
+[settings-daemon/peripherals/mouse]
+drag-threshold=8
+motion-threshold=1
+motion-acceleration=1.0
+double-click=400
+locate-pointer=false
+
 [sounds]
-plug-file='/usr/share/cinnamon/sounds/bell.ogg'
+map-enabled=false
+unplug-file='/home/rien/Music/2sed4airhorn.ogg'
+map-file='/home/rien/Music/wow.ogg'
+switch-enabled=false
+switch-file='/home/rien/Music/airhorn.ogg'
+plug-file='/home/rien/Music/lol.ogg'
 unplug-enabled=true
-plug-enabled=false
-unplug-file='/usr/share/cinnamon/sounds/2SED4AIRHORN.oga'
+plug-enabled=true
 
 [muffin]
 button-layout=':minimize,maximize,close'
-workspace-cycle=true
+resize-threshold=24
+tile-hud-threshold=25
 workspaces-only-on-primary=true
+workspace-cycle=true
 
 [desktop/interface]
 text-scaling-factor=1.0
+cursor-size=24
 first-day-of-week=1
 font-name='Source Sans Pro 10'
 scaling-factor=uint32 0
 toolkit-accessibility=false
+cursor-blink-time=1200
 icon-theme='Super-Ultra-Flat-Numix-Remix-Majestic'
 gtk-theme='Adapta-Nokto'
 clock-show-date=true
@@ -87,8 +107,8 @@ name='Firefox'
 
 [desktop/keybindings/custom-keybindings/custom1]
 binding=['<Primary><Alt>t']
-command='/usr/bin/urxvt'
-name='URXVT'
+command='/home/rien/.local/bin/st'
+name='Terminal'
 
 [desktop/keybindings/custom-keybindings/custom2]
 binding=['<Super>1']
@@ -121,18 +141,28 @@ command='nemo'
 name='Explorer'
 
 [desktop/keybindings/custom-keybindings/custom11]
-binding=['<Super>s']
-command='/home/rien/scripts/shot.sh -s'
-name='Screenshot'
+binding=['<Shift><Super>s']
+command='/home/rien/.local/bin/shot'
+name='Screenshot fullscreen'
 
 [desktop/keybindings/custom-keybindings/custom7]
 binding=['<Super>u']
 command='nemo UGent/'
 name='Explorer UGent'
 
+[desktop/keybindings/custom-keybindings/custom8]
+binding=['<Super>g']
+command='/usr/bin/chromium'
+name='chromium'
+
+[desktop/keybindings/custom-keybindings/custom9]
+binding=['<Super>s']
+command='/home/rien/.local/bin/shot -s'
+name='Screenshot area'
+
 [desktop/keybindings]
 looking-glass-keybinding=@as []
-custom-list=['custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom10', 'custom11', 'custom1', 'custom0']
+custom-list=['custom2', 'custom3', 'custom4', 'custom5', 'custom6', 'custom7', 'custom10', 'custom1', 'custom0', 'custom8', 'custom9', 'custom11']
 
 [desktop/keybindings/media-keys]
 terminal=@as []
@@ -147,6 +177,8 @@ toggle-fullscreen=['<Primary>F11']
 toggle-maximized=['F11']
 
 [desktop/media-handling]
+automount-open=false
+automount=false
 autorun-x-content-start-app=['x-content/unix-software']
 autorun-never=false
 autorun-x-content-ignore=@as []
@@ -176,18 +208,38 @@ recent-files-max-age=-1
 remember-recent-files=false
 
 [desktop/wm/preferences]
-workspace-names=@as []
+min-window-opacity=30
 theme='Adapta-Nokto'
 action-scroll-titlebar='opacity'
-num-workspaces=5
+num-workspaces=6
 titlebar-font='Source Sans Pro 11'
+workspace-names=@as []
 
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
 screen-reader-enabled=false
 
 [desktop/a11y/keyboard]
+slowkeys-beep-press=true
+mousekeys-accel-time=1200
+bouncekeys-beep-reject=true
+slowkeys-beep-reject=false
 togglekeys-enable=true
+disable-timeout=120
+enable=false
+bouncekeys-enable=false
+stickykeys-enable=false
+feature-state-change-beep=false
+slowkeys-beep-accept=true
+bouncekeys-delay=300
+mousekeys-max-speed=500
+mousekeys-enable=false
+timeout-enable=false
+slowkeys-delay=300
+stickykeys-modifier-beep=true
+stickykeys-two-key-off=true
+mousekeys-init-delay=160
+slowkeys-enable=false
 
 [desktop/a11y/mouse]
 secondary-click-enabled=false
@@ -202,7 +254,7 @@ volume-sound-enabled=true
 event-sounds=false
 
 [desktop/background]
-picture-uri='file:///home/rien/Pictures/Wallpapers/Minimal/i1fWeyv.png'
+picture-uri='file:///home/rien/Downloads/bg.png'
 color-shading-type='solid'
 primary-color='#023c88'
 picture-options='zoom'
@@ -210,6 +262,10 @@ secondary-color='#5789ca'
 
 [desktop/background/slideshow]
 image-source='directory:///home/rien/Pictures'
+delay=15
 
 [theme]
 name='Adapta-Nokto'
+
+[cinnamon-session]
+quit-time-delay=60

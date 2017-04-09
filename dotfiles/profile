@@ -175,4 +175,6 @@ eval "$(rbenv init -)"
 # Environment variables
 export DEFAULT_USER=rien
 export EDITOR=/usr/bin/nvim
-export TERMINAL=/usr/bin/urxvt
+export VISUAL=/usr/bin/nvim
+export PAGER=/usr/bin/less
+export TERMINAL=/home/rien/.local/st

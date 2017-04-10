@@ -6,7 +6,7 @@ export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:$PATH"
 alias vop='cd /home/rien/Development/Java/VOP'
 alias webdev='cd /home/rien/Development/Ruby/itech-pract1'
 alias stat='cd /home/rien/Development/StatGeg'
-alias prog='cd /home/rien/Development/Oz/Project-Progtalen'
+alias prog='cd /home/rien/Development/Oz/Project-ProgTalen'
 
 # Different aliases and inits for servers and clients
 if [[ -z "$SSH_CONNECTION" ]]
@@ -137,6 +137,7 @@ function ebc {
     echo $1 | bc -l
 }
 
+unalias rm
 # Interactive rm function: always show what is going to be removed
 function rm {
     local nodes=()

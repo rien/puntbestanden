@@ -17,6 +17,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
 Plug 'slim-template/vim-slim'
+Plug 'procrat/oz.vim'
 call plug#end()
 
 set autoread

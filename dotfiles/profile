@@ -2,7 +2,7 @@
 # If not running interactively, do nothing
 [[ $- != *i* ]] && return
 
-export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:$PATH"
+export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:/home/rien/Development/Android/SDK/tools/bin:/home/rien/Development/Android/SDK/platform-tools:$PATH"
 alias vop='cd /home/rien/Development/Java/VOP'
 alias webdev='cd /home/rien/Development/Ruby/itech-pract1'
 alias stat='cd /home/rien/Development/StatGeg'
@@ -50,8 +50,8 @@ then
     alias normal='sudo cpupower frequency-set -g powersave && turbo'
 
     # Android Debug Bridge
-    alias adbrestart='sudo adb kill-server && sudo adb start-server'
-    alias adb='sudo adb'
+    #alias adbrestart='sudo adb kill-server && sudo adb start-server'
+    #alias adb='sudo adb'
 
     # <3 HTTPie
     alias https='http --default-scheme=https'

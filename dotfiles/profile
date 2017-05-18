@@ -2,11 +2,12 @@
 # If not running interactively, do nothing
 [[ $- != *i* ]] && return
 
-export PATH="/home/rien/.rbenv/bin:/home/rien/.local/bin/:/home/rien/Development/Android/SDK/tools/bin:/home/rien/Development/Android/SDK/platform-tools:$PATH"
+export PATH="/home/rien/.cabal/bin:/home/rien/.rbenv/bin:/home/rien/.local/bin/:/home/rien/Development/Android/SDK/tools/bin:/home/rien/Development/Android/SDK/platform-tools:$PATH"
 alias vop='cd /home/rien/Development/Java/VOP'
-alias webdev='cd /home/rien/Development/Ruby/itech-pract1'
+alias webdev='cd /home/rien/Development/Ruby/itech-pract3'
 alias stat='cd /home/rien/Development/StatGeg'
 alias prog='cd /home/rien/Development/Oz/Project-ProgTalen'
+alias dingen='cd /home/rien/Development/Dingen'
 
 # Different aliases and inits for servers and clients
 if [[ -z "$SSH_CONNECTION" ]]
@@ -50,8 +51,7 @@ then
     alias normal='sudo cpupower frequency-set -g powersave && turbo'
 
     # Android Debug Bridge
-    #alias adbrestart='sudo adb kill-server && sudo adb start-server'
-    #alias adb='sudo adb'
+    alias adbrestart='adb kill-server && adb start-server'
 
     # <3 HTTPie
     alias https='http --default-scheme=https'

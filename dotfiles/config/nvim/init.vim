@@ -80,6 +80,11 @@ map <Esc><Esc> :w<CR>
 " Unhighlight highlighted stuff
 map <C-s> :noh<CR>
 
+if has('nvim')
+    " Command substitution: see 'live' what will be changed
+    set inccommand=split
+endif
+
 " Copy/paste with X11 CLIPBOARD
 set clipboard=unnamedplus
 

@@ -85,6 +85,9 @@ alias untar='tar -xzvf'
 alias vu='sudo vpnc /root/vpnc.conf'
 alias vd='sudo vpnc-disconnect'
 
+# I AM A MONSTER
+alias nvim='emacs'
+
 # Neovim!
 alias vi='nvim'
 alias vim='nvim'

@@ -16,8 +16,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
+Plug 'rust-lang/rust.vim'
 Plug 'slim-template/vim-slim'
 Plug 'procrat/oz.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 set autoread
@@ -94,6 +97,8 @@ let mapleader = '\'
 let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'
 
+" Rust
+let g:ycm_rust_src_path='/usr/src/rust/src'
 
 filetype plugin indent on
 

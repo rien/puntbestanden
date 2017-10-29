@@ -1,3 +1,12 @@
+host naos
+    hostname naos.ugent.be
+    port 4840
+    user dodona
+
+host hpc
+    hostname login.hpc.ugent.be
+    user vsc42402
+
 host vop
     hostname vopro7.ugent.be
     port 2002
@@ -84,7 +93,7 @@ host we12s300 s300
     user rien
     port 1048
 
-host sko
+host sko skodo
     hostname studentkickoff.be
     user root
 

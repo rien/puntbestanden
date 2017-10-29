@@ -18,3 +18,5 @@
   insteadOf = https://github.com/
 [url "ssh://git@github.ugent.be/"]
   insteadOf = https://github.ugent.be/
+[github]
+	user = R13N

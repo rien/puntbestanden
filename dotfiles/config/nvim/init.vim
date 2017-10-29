@@ -5,22 +5,25 @@ filetype off
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'lervag/vimtex'
+Plug 'Valloric/YouCompleteMe'
 Plug 'blueshirts/darcula'
+Plug 'easymotion/vim-easymotion'
+Plug 'jceb/vim-orgmode'
+Plug 'jiangmiao/auto-pairs'
+Plug 'lervag/vimtex'
+Plug 'procrat/oz.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'slim-template/vim-slim'
+Plug 'takac/vim-hardtime'
+Plug 'tpope/tpope-vim-abolish'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'takac/vim-hardtime'
-Plug 'easymotion/vim-easymotion'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
-Plug 'rust-lang/rust.vim'
-Plug 'slim-template/vim-slim'
-Plug 'procrat/oz.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'Valloric/YouCompleteMe'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
 
 set autoread
@@ -28,13 +31,19 @@ set autoread
 autocmd FileType markdown set spell spelllang=en_us,nl
 
 " hardtime: break habits
-"let g:hardtime_default_on = 1
-"let g:hardtime_showmsg = 1
-"let g:hardtime_allow_different_key = 1
+let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
+let g:hardtime_allow_different_key = 1
+" Maybe not so hard...
+let g:hardtime_timeout = 500
+let g:hardtime_maxcount = 5
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
-let g:syntastic_ruby_checkers = ['rubocop']
+
+
+noremap J <C-d>
+noremap K <C-u>
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -44,6 +53,12 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = [ 'eslint' ]
+let g:syntastic_rust_rustc_exe = 'cargo check'
+let g:syntastic_rust_rustc_fname = ''
+let g:syntastic_rust_rustc_args = '--'
+let g:syntastic_rust_checkers = ['rustc']
 map <C-c> :SyntasticToggleMode<CR>
 
 " Use HJKL
@@ -103,6 +118,7 @@ let g:ycm_rust_src_path='/usr/src/rust/src'
 filetype plugin indent on
 
 autocmd FileType javascript call WebDevHook()
+autocmd FileType less call WebDevHook()
 autocmd FileType html call WebDevHook()
 autocmd FileType ruby call WebDevHook()
 autocmd FileType yaml call WebDevHook()

@@ -5,6 +5,7 @@ filetype off
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'Valloric/YouCompleteMe'
 Plug 'blueshirts/darcula'
 Plug 'easymotion/vim-easymotion'

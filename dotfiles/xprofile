@@ -5,8 +5,9 @@ xrdb "$HOME/.Xresources"
 urxvtd &
 
 # Enable keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
+eval $(ssh-agent)
 
 ibus-daemon -drx
 export GTK_IM_MODULE=ibus

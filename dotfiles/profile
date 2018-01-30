@@ -7,10 +7,11 @@ JAVA_HOME="/usr/lib/openjdk"
 
 # A more unclutttered way of defining custom PATHs
 PATHS=(
-    "/home/rien/.cargo/bin"
-    "/home/rien/.cabal/bin"
-    "/home/rien/.rbenv/bin"
     "/home/rien/.local/bin/"
+    "/home/rien/.cargo/bin"
+    # "/home/rien/.cabal/bin"
+    "/home/rien/.rbenv/bin"
+    "/home/rien/.anyenv/bin"
     "/home/rien/Development/Android/SDK/tools/bin"
     "/home/rien/Development/Android/SDK/platform-tools"
 )
@@ -28,7 +29,8 @@ then
 
     # Automatically start X when logged in
     if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-        exec startx
+        startx || vlock
+        exit
     fi
 
     ZSH_TMUX_AUTOSTART=false
@@ -53,7 +55,7 @@ then
 
     # Clipboard stuff
     alias showclip='xclip -o -sel clip'
-    alias paste='xlip -o -sel clip >'
+    alias paste='xclip -o -sel clip >'
     alias clip='xclip -sel clip <'
 
     # Zeus
@@ -202,8 +204,9 @@ compdef rm=rm
 # Init some things
 eval "$(thefuck --alias)"
 eval "$(rbenv init -)"
+eval "$(anyenv init -)"
 
-# export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 

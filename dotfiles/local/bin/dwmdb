@@ -2,5 +2,6 @@
 while checksum=$(sha1sum $(which dwm)) && [ "$checksum" != "$prev_checksum" ]
 do
     prev_checksum="$checksum"
+    lock.sh
     dwm
 done

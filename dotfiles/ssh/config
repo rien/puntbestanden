@@ -3,6 +3,11 @@ host naos
     port 4840
     user dodona
 
+host kalut
+    hostname rxn.be
+    port 9451
+    user rien
+
 host hpc
     hostname login.hpc.ugent.be
     user vsc42402

@@ -12,6 +12,9 @@ setxkbmap -layout us -variant alt-intl
 # Fix backlight
 xbacklight -set 100
 
+# Keyboard repeat delay and rate
+xset r rate 200 50
+
 # Forking graphical programs
 forklog() {
     $* 2>&1 | logger &
@@ -19,9 +22,6 @@ forklog() {
 
 forklog xautolock -time 5 -locker lock.sh -notify 5
 forklog bar.sh
-
-# Start locked
-forklog xautolock -locknow
 
 rambox &
 exec dwmdb

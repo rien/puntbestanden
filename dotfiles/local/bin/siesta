@@ -1,3 +1,4 @@
 #!/bin/bash
 # Lock screen and go to sleep
-xautolock -locknow && sleep 1 && sudo zzz
+lock.sh &
+sleep 1 && sudo zzz

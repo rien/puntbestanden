@@ -6,7 +6,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'blueshirts/darcula'
 Plug 'easymotion/vim-easymotion'
 Plug 'jceb/vim-orgmode'
@@ -16,7 +16,6 @@ Plug 'procrat/oz.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'slim-template/vim-slim'
-Plug 'takac/vim-hardtime'
 Plug 'tpope/tpope-vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -25,19 +24,26 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-syntastic/syntastic'
 Plug 'vim-ruby/vim-ruby'
+Plug 'rhysd/vim-crystal'
+Plug 'eagletmt/neco-ghc'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'eagletmt/ghcmod-vim'
+
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()
 
 set autoread
 
 autocmd FileType markdown set spell spelllang=en_us,nl
-
-" hardtime: break habits
-let g:hardtime_default_on = 1
-let g:hardtime_showmsg = 1
-let g:hardtime_allow_different_key = 1
-" Maybe not so hard...
-let g:hardtime_timeout = 500
-let g:hardtime_maxcount = 5
+autocmd FileType tex set spell spelllang=en_us,nl
 
 " easymotion
 map <Leader> <Plug>(easymotion-prefix)
@@ -54,6 +60,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_haskell_checkers = ['hlint', 'ghc_mod']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = [ 'eslint' ]
 let g:syntastic_rust_rustc_exe = 'cargo check'
@@ -113,19 +120,52 @@ let mapleader = '\'
 let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+" == Haskell ==
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" Disable haskell-vim omnifunc
+let g:necoghc_use_stack = 1
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+"let g:ghcmod_use_basedir="/home/rien/.vim/scripts/"
+
+" Let <Tab> also do completion
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+
+
 " Rust
 let g:ycm_rust_src_path='/usr/src/rust/src'
 
 filetype plugin indent on
 
-autocmd FileType javascript call WebDevHook()
-autocmd FileType less call WebDevHook()
-autocmd FileType html call WebDevHook()
-autocmd FileType ruby call WebDevHook()
-autocmd FileType yaml call WebDevHook()
-autocmd FileType eruby call WebDevHook()
+autocmd FileType javascript call TwoSpaces()
+autocmd FileType less call TwoSpaces()
+autocmd FileType css call TwoSpaces()
+autocmd FileType scss call TwoSpaces()
+autocmd FileType html call TwoSpaces()
+autocmd FileType ruby call TwoSpaces()
+autocmd FileType yaml call TwoSpaces()
+autocmd FileType eruby call TwoSpaces()
+autocmd FileType haskell call TwoSpaces()
+autocmd FileType json call TwoSpaces()
+autocmd FileType crystal call TwoSpaces()
 
-function WebDevHook()
+function TwoSpaces()
     setlocal tabstop=2
     setlocal shiftwidth=2
     setlocal softtabstop=2

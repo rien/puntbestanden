@@ -19,4 +19,4 @@
 [url "ssh://git@github.ugent.be/"]
   insteadOf = https://github.ugent.be/
 [github]
-	user = R13N
+	user = rien

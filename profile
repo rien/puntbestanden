@@ -78,6 +78,39 @@ then
     alias https='http --default-scheme=https'
 
 
+    unalias rm 2>&1 > /dev/null || true
+    # Interactive rm function: always show what is going to be removed
+    function rm {
+        local nodes=()
+        for arg in "$@"
+        do
+            if /usr/bin/grep -qv '^-' <<< "$arg"
+            then
+                nodes+=("$arg")
+                if [ -d "$arg" ]
+                then
+                    /usr/bin/tree -Csauh --du "$arg"
+                else
+                    /usr/bin/ls -FCsh "$arg"
+                fi
+            fi
+        done
+
+        # Show total size of the files
+        /usr/bin/du -csh ${nodes[@]} | tail -n1
+
+        # Ask confirmation
+        echo 'remove[y/N]?' | tr -d '\012'
+        read
+
+        if [ "_$REPLY" = "_y" ]
+        then
+            /bin/rm -rfv $@
+        else
+            echo '(cancelled)'
+        fi
+    }
+    compdef rm=rm
 else
 ## SERVER ##
     alias poweroff=" echo \"You know you\'re on a server, right?\""
@@ -167,39 +200,6 @@ function ebc {
     echo $1 | bc -l
 }
 
-unalias rm 2>&1 > /dev/null || true
-# Interactive rm function: always show what is going to be removed
-function rm {
-    local nodes=()
-    for arg in "$@"
-    do
-        if /usr/bin/grep -qv '^-' <<< "$arg"
-        then
-            nodes+=("$arg")
-            if [ -d "$arg" ]
-            then
-                /usr/bin/tree -Csauh --du "$arg"
-            else
-                /usr/bin/ls -FCsh "$arg"
-            fi
-        fi
-    done
-
-    # Show total size of the files
-    /usr/bin/du -csh ${nodes[@]} | tail -n1
-
-    # Ask confirmation
-    echo 'remove[y/N]?' | tr -d '\012'
-    read
-
-    if [ "_$REPLY" = "_y" ]
-    then
-        /bin/rm -rfv $@
-    else
-        echo '(cancelled)'
-    fi
-}
-compdef rm=rm
 
 # Init some things
 eval "$(thefuck --alias)"

@@ -71,6 +71,9 @@ for dotfile in "${dotfiles[@]}"; do
     ln -sfnT "$DEST/$dotfile" "$HOME/.$dotfile"
 done
 
+echo 'Fix permissions of .ssh/config'
+chmod 644 "$DEST/ssh/config"
+
 echo 'Link Vim config files to NeoVim config files (just to be safe)...'
 ln -sfn "$HOME/.config/nvim" "$HOME/.vim"
 ln -sfn "$HOME/.config/nvim/init.vim" "$HOME/.vimrc"

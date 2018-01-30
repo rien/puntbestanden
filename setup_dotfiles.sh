@@ -4,6 +4,8 @@
 
 set -euo pipefail
 
+umask 022
+
 REPO='git@github.com:rien/puntbestanden.git'
 DEST="$HOME/puntbestanden/"
 
@@ -68,9 +70,6 @@ for dotfile in "${dotfiles[@]}"; do
     mkdir -p "$(dirname "$HOME/.$dotfile")"
     ln -sfnT "$DEST/$dotfile" "$HOME/.$dotfile"
 done
-
-echo 'Fix ssh permissions of ssh config'
-chmod 644 "$DEST/ssh/config"
 
 echo 'Link Vim config files to NeoVim config files (just to be safe)...'
 ln -sfn "$HOME/.config/nvim" "$HOME/.vim"

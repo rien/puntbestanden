@@ -104,8 +104,8 @@ fi
 
 echo 'Updating vim-plug and NeoVim plugins...'
 if [[ -n "$(which nvim 2>/dev/null)" ]]; then
-    nvim --headless +PlugUpgrade +qall
-    nvim --headless +PlugUpdate +qall
+    nvim --headless +silent! +PlugUpgrade +qall
+    nvim --headless +silent! +PlugUpdate +qall
 else
     echo 'No NeoVim installation was found.' >&2
 fi

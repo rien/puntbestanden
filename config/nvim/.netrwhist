@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/rien/Development/biopythia/rosalind-scraper/src'
+let g:netrw_dirhist_2='/home/rien/Development/Ruby/nanoc-latexmk'
+let g:netrw_dirhist_3='/home/rien/Development/Ruby/nanoc-latexmk/lib'
+let g:netrw_dirhist_4='/home/rien/Development/Ruby/nanoc-latexmk/lib/nanoc'
+let g:netrw_dirhist_5='/home/rien/Development/Ruby/nanoc-latexmk/lib/nanoc/latexmk'
+let g:netrw_dirhist_6='/home/rien/Development/Ruby/nanoc-latexmk/lib/nanoc/latexmk/filters'
+let g:netrw_dirhist_7='/home/rien/puntbestanden/dotfiles/local/bin'
+let g:netrw_dirhist_8='/home/rien/puntbestanden'

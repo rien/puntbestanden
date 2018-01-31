@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
+#
 # Copied with much ❤ from Procrat's setup.sh
 # https://github.com/Procrat/dotfiles/blob/master/setup.sh
+#
+# Copyright (c) 2014-2016 Stijn Seghers <stijnseghers@gmail.com>
+# See legal/LICENSE.PROCRAT for details
 
 set -euo pipefail
 

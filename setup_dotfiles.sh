@@ -56,6 +56,7 @@ dotfiles=(
     config/nvim/init.vim
     ghci
     gitconfig
+    gitignore
     moc/config
     profile
     rubocop.yml

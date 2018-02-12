@@ -4,6 +4,7 @@
     signingkey = 943CAB70C511D23C
 [core]
     editor = nvim
+	excludesfile = /home/rien/.gitignore
 [push]
     default = simple
 [color]

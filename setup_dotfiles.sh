@@ -51,7 +51,6 @@ echo 'Linking dotfiles...'
 dotfiles=(
     bash_profile
     bashrc
-    config/htop/htoprc
     config/mpv/mpv.conf
     config/nvim/init.vim
     ghci

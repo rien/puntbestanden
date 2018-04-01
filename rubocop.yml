@@ -19,3 +19,5 @@ Style/EmptyMethod:
   Enabled: false
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+Metrics/AbcSize:
+  Enabled: false

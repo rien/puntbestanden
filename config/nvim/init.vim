@@ -28,6 +28,7 @@ Plug 'rhysd/vim-crystal'
 Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'eagletmt/ghcmod-vim'
+Plug 'isRuslan/vim-es6'
 
 
 if has('nvim')

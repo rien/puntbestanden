@@ -1,0 +1,4 @@
+#!/bin/bash
+# Lock screen and go to sleep
+lock.sh &
+sleep 1 && sudo zzz $@

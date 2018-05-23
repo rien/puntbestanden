@@ -1,0 +1,18 @@
+[Default Applications]
+text/html=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+image/pdf=zathura.desktop
+application/x-pdf=zathura.desktop
+pdf=zathura.desktop
+application/pdf=zathura.desktop
+
+[Added Associations]
+image/jpeg=eog.desktop;feh.desktop;
+application/pdf=evince.desktop;firefox.desktop;chromium.desktop;okularApplication_txt.desktop;okularApplication_pdf.desktop;
+image/png=okularApplication_kimgio.desktop;
+
+[Removed Associations]
+

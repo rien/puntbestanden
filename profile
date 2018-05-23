@@ -77,6 +77,9 @@ then
     # <3 HTTPie
     alias https='http --default-scheme=https'
 
+    alias sun='xrandr --output eDP1 --brightness 1.1 && xrandr --output eDP1 --gamma 1.5:1.5:1.5'
+    alias nosun='xrandr --output eDP1 --brightness 0.9 && xrandr --output eDP1 --gamma 1:1:1'
+
 
     [[ $(type rm) == "*alias*" ]] && unalias rm 2>&1 > /dev/null || true
     # Interactive rm function: always show what is going to be removed
@@ -196,15 +199,14 @@ alias off='sudo poweroff'  #  Don't accidentally shut down severs
 
 # Calculate stuff with bc faster
 # Usage: ebc '1 + 1'
-function ebc {
+ebc() {
     echo $1 | bc -l
 }
 
-
 # Init some things
-eval "$(thefuck --alias)"
-eval "$(rbenv init -)"
-eval "$(anyenv init -)"
+eval "$(thefuck --alias)"   2> /dev/null
+eval "$(rbenv init -)"      2> /dev/null
+eval "$(anyenv init -)"     2> /dev/null
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

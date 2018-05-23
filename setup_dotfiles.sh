@@ -19,8 +19,8 @@ DEST="$HOME/puntbestanden/"
 VIM_PLUG_SCRIPT='https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 VIM_PLUG_DEST="$HOME/.config/nvim/autoload/plug.vim"
 
-DEFAULT_SHELL='/bin/zsh'
-ZPREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
+DEFAULT_SHELL='/bin/bash'
+# ZPREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
 
 
 ensure_repo_exists_and_has_latest_version() {
@@ -49,13 +49,16 @@ curl -fLo "$VIM_PLUG_DEST" --create-dirs "$VIM_PLUG_SCRIPT"
 
 echo 'Linking dotfiles...'
 dotfiles=(
+    Xresources
     bash_profile
     bashrc
+    completions
     config/mpv/mpv.conf
     config/nvim/init.vim
     ghci
     gitconfig
     gitignore
+    inputrc
     moc/config
     profile
     rubocop.yml
@@ -63,7 +66,6 @@ dotfiles=(
     tmux.conf
     xinitrc
     xprofile
-    Xresources
     zlogin
     zpreztorc
     zprofile
@@ -87,10 +89,10 @@ ln -sfn "$DEST/local/bin" "$HOME/.local/bin"
 
 # Really, Freedesktop? There is no hope left if you don't even follow your own
 # standards.
-#if [[ -e "$HOME/.local/share/applications/mimeapps.list" ]]; then
-#    ln -sfn "$HOME/.config/mimeapps.list" \
-#        "$HOME/.local/share/applications/mimeapps.list"
-#fi
+if [[ -e "$HOME/.local/share/applications/mimeapps.list" ]]; then
+    ln -sfn "$HOME/.config/mimeapps.list" \
+        "$HOME/.local/share/applications/mimeapps.list"
+fi
 
 echo "Ensuring $DEFAULT_SHELL is the default shell..."
 if [[ -x "$DEFAULT_SHELL" ]]; then

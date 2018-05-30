@@ -1,0 +1,9 @@
+# Custom gdb options
+
+set disassembly-flavor intel
+
+# Only show certain dashboard panes
+dashboard -layout assembly registers source stack expressions !threads !memory !history
+
+# Better highlighting
+dashboard -style syntax_highlighting 'native'

@@ -177,19 +177,13 @@ alias .....='cd ../../../..'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-alias ls='ls -h --color'
-alias l='ls -Alhk'         #  Woopwoop
-alias lx='ls -lXB'         #  Sort by extension.
-alias lk='ls -lSr'         #  Sort by size, biggest last.
-alias lt='ls -ltr'         #  Sort by date, most recent last.
-alias lc='ls -ltcr'        #  Sort by/show change time,most recent last.
-alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
+# Exa is a cool alternative for ls
+alias ls='exa'
+alias l='exa -l --color-scale'
+alias la='exa -la --color-scale'
 
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
-alias ll="ls -lv --group-directories-first"
-alias lm='ll | less'       #  Pipe through 'more'
-alias la='ll -A'           #  Show hidden files.
+# lr is also cool
+alias ll="lr -1Glh"
 
 # Human readable sizes for du and df
 alias du="du -h"
@@ -197,14 +191,25 @@ alias df="df -h"
 
 # Other
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-alias lr='tree'            #  Recursive ls
 alias bc='bc -l'           #  Always import the standard math library
 alias off='sudo poweroff'  #  Don't accidentally shut down severs
 
 # Calculate stuff with bc faster
 # Usage: ebc '1 + 1'
 ebc() {
-    echo $1 | bc -l
+    # qalc is better
+    echo $1 | qalq
+}
+
+# Initialize z
+source "$HOME/.local/bin/z.sh"
+
+# Jump to a directory
+d() {
+    dir="$(lr /etc /home -t '(name ~~ ".*" && prune || print) && type = d && !(name = ".git")' \
+          | fzf --height 10 \
+          )"
+    [ -n "$dir" ] && cd "$dir" || false
 }
 
 # Init some things

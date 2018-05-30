@@ -30,7 +30,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'eagletmt/ghcmod-vim'
 Plug 'isRuslan/vim-es6'
 
-
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else

@@ -1,3 +1,12 @@
 [submodule "submodules/bash-it"]
 	path = submodules/bash-it
 	url = git@github.com:Bash-it/bash-it.git
+[submodule "submodules/z"]
+	path = submodules/z
+	url = git@github.com:rupa/z.git
+[submodule "submodules/voltron"]
+	path = submodules/voltron
+	url = git@github.com:snare/voltron.git
+[submodule "submodules/gdb-dashboard"]
+	path = submodules/gdb-dashboard
+	url = git@github.com:cyrus-and/gdb-dashboard.git

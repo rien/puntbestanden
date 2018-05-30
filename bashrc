@@ -37,42 +37,22 @@ prompt_git() {
 
 # echo the return status if not 0
 prompt_status() {
-    [ $? -eq 0 ] || echo -ne "$? "
+    [ $? -eq 0 ] || echo -ne " $? "
 }
 
 export PS1="$BLUE_\$(ks prompt_pwd) \$(ks prompt_git)$RED_\$(prompt_status)$YELLOW_❯❯❯ $RESET_"
-
-
-# Completion
-_comp_git() {
-    local IFS=$'\n'
-    # $1 is the name of the command whose arguments are being completed
-    # $2 is the word being completed
-    # $3 is the word preceding the word being completed
-
-    # branch names
-    COMPREPLY=( $(git branch -a --format "%(refname:short)" | grep "^$2") )
-
-    # remotes
-    COMPREPLY+=( $(git remote | grep "^$2") )
-
-    # files
-    COMPREPLY+=( $(git ls-files -co --exclude-standard "$2*" | sed "s?\($2[^/]*\).*?\1?") )
-
-    # subcommands
-    if [ "$3" = "git" ]; then
-        COMPREPLY+=( $({ compgen -c "git-"; command ls /usr/libexec/git-core; } | sed -n 's/^git-//p' | grep "^$2") )
-    fi
-}
 
 complete -c man
 complete -cf sudo
 complete -cf exec
 complete -cf run
-complete -o filenames -F _comp_git git
 
 # history
+shopt -s histappend
 export HISTCONTROL=ignorespace:erasedups
+export HISTSIZE=
+export HISTFILESIZE=
+PROMPT_COMMAND='history -a'
 
 
 # Load aliasses and other stuff

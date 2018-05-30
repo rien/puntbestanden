@@ -1,0 +1,1 @@
+submodules/gdb-dashboard/.gdbinit

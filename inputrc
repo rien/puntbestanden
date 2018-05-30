@@ -1,2 +1,7 @@
 $include /etc/inputrc
 set colored-stats on
+
+## arrow up
+"\e[A":history-search-backward
+## arrow down
+"\e[B":history-search-forward

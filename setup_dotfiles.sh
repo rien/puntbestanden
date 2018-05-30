@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copied with much ❤ from Procrat's setup.sh
+# Copied and modified with much ❤ from Procrat's setup.sh
 # https://github.com/Procrat/dotfiles/blob/master/setup.sh
 #
 # Copyright (c) 2014-2016 Stijn Seghers <stijnseghers@gmail.com>
@@ -55,6 +55,8 @@ dotfiles=(
     completions
     config/mpv/mpv.conf
     config/nvim/init.vim
+    gdbinit
+    gdbinit.d
     ghci
     gitconfig
     gitignore

@@ -191,7 +191,7 @@ alias df="df -h"
 
 # Other
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-alias bc='bc -l'           #  Always import the standard math library
+alias bc='qalc'            #  Qalculate! https://qalculate.github.io/
 alias off='sudo poweroff'  #  Don't accidentally shut down severs
 
 # Calculate stuff with bc faster

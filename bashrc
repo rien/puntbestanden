@@ -1,61 +1,47 @@
 # Inspired by https://github.com/NoctuaNivalis/dotfiles/blob/master/bashrc
 
 # Colors
-RED_="$(tput setaf 1)"
-GREEN_="$(tput setaf 2)"
-YELLOW_="\[$(tput setaf 3)\]"
-BLUE_="$(tput setaf 4)"
-PURPLE_="$(tput setaf 5)"
-WHITE_="$(tput setaf 7)"
-RESET_="\[$(tput sgr0)\]"
+# The \001 and \002 are more universal than the bash-only \[ and \] to escape color sequences
+RED_="\001$(tput setaf 1)\002"
+GREEN_="\001$(tput setaf 2)\002"
+YELLOW_="\001$(tput setaf 3)\002"
+BLUE_="\001$(tput setaf 4)\002"
+PURPLE_="\001$(tput setaf 5)\002"
+WHITE_="\001$(tput setaf 7)\002"
+RESET_="\001$(tput sgr0)\002"
 
+# keep the current return status ($?) while executing another command
 ks() { s="$?" ; $* ; return "$s" ; }
-
-prompt_git() {
-    if git status 2>/dev/null 1>&2; then
-
-        local branch=$(git branch | sed -n 's/^\* (*\(.* \)*\([^ )]*\))*$/\2/p')
-        local status=$(git status --branch --porcelain=2)
-        local added=$(sed -n 's/^[12] M.*$/✚ /p' <<< $status | tail -1)
-        local before=$(sed -n 's/^# branch\.ab +\([^0].*\) .*$/⬆ /p' <<< $status)
-        local behind=$(sed -n 's/^# branch\.ab.*-\([^0].*\)$/⬇ /p' <<< $status)
-        local deleted=$(sed -n 's/^[12] D.*$/✖ /p' <<< $status | tail -1)
-        local modified=$(sed -n 's/^[12] .M.*$/✱ /p' <<< $status | tail -1)
-        local unmerged=$(sed -n 's/^u/⚠ /p' <<< $status | tail -1)
-        local untracked=$(sed -n 's/^?.*$/◼ /p' <<< $status | tail -1)
-
-        local git_parts=(
-            "$GREEN_$branch "
-            "$RED_$unmerged"
-            "$GREEN_$added"
-            "$BLUE_$modified"
-            "$RED_$deleted"
-            "$WHITE_$untracked"
-            "$PURPLE_$behind$before"
-        )
-        echo -en "$(IFS='' ; echo -en "${git_parts[*]}")"
-    fi
-}
 
 prompt_pwd() {
     pwd | sed -e "s_${HOME}_~_" -e 's_\(/*\.*.\)[^/]*/_\1/_g'
 }
 
+prompt_git() {
+    if git status 2>/dev/null 1>&2; then
+
+        local branch="$(git branch | sed -n 's/^\* (*\(.* \)*\([^ )]*\))*$/\2/p' | tail -1)"
+        local status="$(git status --branch --porcelain=2) "
+        local added="$(sed -n 's/^[12] M.*$/✚ /p' <<< $status | tail -1)"
+        local before="$(sed -n 's/^# branch\.ab +\([^0].*\) .*$/⬆ /p' <<< $status | tail -1)"
+        local behind="$(sed -n 's/^# branch\.ab.*-\([^0].*\)$/⬇ /p' <<< $status | tail -1)"
+        local deleted="$(sed -n 's/^[12] D.*$/✖ /p' <<< $status | tail -1)"
+        local modified="$(sed -n 's/^[12] .M.*$/✱ /p' <<< $status | tail -1)"
+        local unmerged="$(sed -n 's/^u/⚠ /p' <<< $status | tail -1)"
+        local untracked="$(sed -n 's/^?.*$/◼ /p' <<< $status | tail -1)"
+
+        printf "$GREEN_%s$RED_%s$GREEN_%s$BLUE_%s$RED_%s$WHITE_%s$PURPLE_%s%s" \
+               "$branch" "$unmerged" "$added" "$modified" "$deleted" "$untracked" "$behind" "$before"
+    fi
+}
+
+# echo the return status if not 0
 prompt_status() {
-    [ $? -eq 0 ] || echo "$? "
+    [ $? -eq 0 ] || echo -ne "$? "
 }
 
-prompt_ps1(){
-    local prompt_parts=(
-        "$BLUE_\$(ks prompt_pwd) "
-        "\$(ks prompt_git)"
-        "$RED_\$(prompt_status)"
-        "$YELLOW_❯❯❯"
-    )
-    echo "$(IFS='' ; echo "${prompt_parts[*]}") $RESET_"
-}
+export PS1="$BLUE_\$(ks prompt_pwd) \$(ks prompt_git)$RED_\$(prompt_status)$YELLOW_❯❯❯ $RESET_"
 
-export PS1="$(prompt_ps1)"
 
 # Completion
 _comp_git() {

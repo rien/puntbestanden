@@ -1,5 +1,3 @@
-# If not running interactively, do nothing
-[[ $- != *i* ]] && return
 
 MANPATH="/home/rien/.local/share/man:$MANPATH"
 
@@ -21,6 +19,9 @@ PATHS+=("$PATH")
 
 # Join all the paths
 export PATH=$(IFS=: ; echo "${PATHS[*]}")
+
+# Exit here if not running interactively (only PATH will have changed)
+[[ $- != *i* ]] && return
 
 # Different aliases and inits for servers and clients
 if [[ -z "$SSH_CONNECTION" ]]
@@ -125,8 +126,11 @@ fi
 alias untar='tar -xzvf'
 
 # UGent VPN
-alias vu='sudo vpnc /root/vpnc.conf'
+alias vu="sudo vpnc /root/vpnc.conf --script $HOME/.local/bin/vpnc-script"
 alias vd='sudo vpnc-disconnect'
+
+# Private VPN
+alias privatevpn="sudo openvpn --config /etc/privatevpn.conf"
 
 # I AM A MONSTER
 #alias emacs='emacsclient -t -s /tmp/emacs1000/server'

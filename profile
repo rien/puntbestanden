@@ -1,7 +1,7 @@
 
 MANPATH="/home/rien/.local/share/man:$MANPATH"
 
-JAVA_HOME="/usr/lib/openjdk"
+JAVA_HOME="/usr/lib/jvm/openjdk"
 
 # A more unclutttered way of defining custom PATHs
 PATHS=(
@@ -39,6 +39,9 @@ then
 
     alias windoos='/home/rien/virtual/win10/windoos.sh'
 
+    # Thesis
+    alias thesis='cd /home/rien/Development/Unipept/thesis'
+
     # Open stuff
     alias o='xdg-open'
 
@@ -61,6 +64,8 @@ then
 
     # Zeus
     alias cmuz='PULSE_SERVER=ZEVEN cmus'
+    alias mpz='mpc -h hoek'
+    alias mpr='mpc -h mpd.rumores.eu -p 6612 -P zeusisdemaks'
     alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
 
     # CPU Commands
@@ -80,6 +85,15 @@ then
 
     alias sun='xrandr --output eDP1 --brightness 1.1 && xrandr --output eDP1 --gamma 1.5:1.5:1.5'
     alias nosun='xrandr --output eDP1 --brightness 0.9 && xrandr --output eDP1 --gamma 1:1:1'
+
+    alias goodmorning='xrandr  --output DP1 --auto --above eDP1'
+    alias goodevening='xrandr  --auto'
+
+    alias zeuspass='PASSWORD_STORE_DIR=~/.zeus-password-store pass'
+
+    alias latexlive="latexmk -xelatex -latexoption='-interaction=nonstopmode -halt-on-error' -view=none -pvc"
+
+    alias sup='RBENV_VERSION=2.3.1 sup'
 
 
     [[ $(type rm) == "*alias*" ]] && unalias rm 2>&1 > /dev/null || true
@@ -126,7 +140,7 @@ fi
 alias untar='tar -xzvf'
 
 # UGent VPN
-alias vu="sudo vpnc /root/vpnc.conf --script $HOME/.local/bin/vpnc-script"
+alias vu="sudo vpnc --script $HOME/.local/bin/vpnc-script"
 alias vd='sudo vpnc-disconnect'
 
 # Private VPN

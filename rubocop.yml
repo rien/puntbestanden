@@ -11,7 +11,7 @@ AllCops:
 
 # Style/FrozenStringLiteralComment:
 #   Enabled: false
-Style/TrailingBlankLines:
+Layout/TrailingBlankLines:
   Enabled: false
 Style/Documentation:
   Enabled: false

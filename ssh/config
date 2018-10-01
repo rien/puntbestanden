@@ -1,3 +1,28 @@
+host adler a
+    hostname adler.ugent.be
+    port 4840
+    user bmesuere
+
+host herbert h
+    hostname herbert.ugent.be
+    port 2222
+    user root
+
+Host dodona
+    Hostname dodona.ugent.be
+    Port 4840
+    User dodona
+
+Host lethe
+    Hostname lethe.ugent.be
+    Port 4840
+    User dodona
+
+Host phocus
+    Hostname phocus.ugent.be
+    Port 4840
+    User dodona
+
 host naos
     hostname naos.ugent.be
     port 4840
@@ -75,18 +100,8 @@ host adams a
 
 host masjiene m
     hostname masjiene.rxn.be
-    port 2222
+    port 9453
     user root
-
-host peter.local pl
-    hostname 192.168.1.33
-    port 2222
-    user rien
-
-host peter p
-    hostname peterpi.duckdns.org
-    port 2222
-    user rien
 
 host gunnar droplet do g
     hostname gunnar.rxn.be
@@ -104,6 +119,10 @@ host sko skodo
 
 host helios
     hostname helios.ugent.be
+    user rbmaerte
+
+host webssh
+    hostname webssh.ugent.be
     user rbmaerte
 
 host *

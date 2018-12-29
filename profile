@@ -2,6 +2,7 @@
 MANPATH="/home/rien/.local/share/man:$MANPATH"
 
 JAVA_HOME="/usr/lib/jvm/openjdk"
+_JAVA_AWT_WM_NONREPARENTING=1
 
 # A more unclutttered way of defining custom PATHs
 PATHS=(
@@ -40,7 +41,8 @@ then
     alias windoos='/home/rien/virtual/win10/windoos.sh'
 
     # Thesis
-    alias thesis='cd /home/rien/Development/Unipept/thesis'
+    alias thesis='cd /home/rien/Unipept/thesis'
+    export THESISDATA='/home/rien/Unipept/thesis/data/'
 
     # Open stuff
     alias o='xdg-open'
@@ -58,8 +60,7 @@ then
     alias steam="LD_PRELOAD='/usr/\$LIB/libstdc++.so.6 /usr/\$LIB/libgcc_s.so.1 /usr/\$LIB/libxcb.so.1 /usr/\$LIB/libgpg-error.so' /usr/bin/steam  > /dev/null 2>&1 &"
 
     # Clipboard stuff
-    alias showclip='xclip -o -sel clip'
-    alias paste='xclip -o -sel clip >'
+    alias paste='xclip -o -sel clip'
     alias clip='xclip -sel clip <'
 
     # Zeus
@@ -94,7 +95,6 @@ then
     alias latexlive="latexmk -xelatex -latexoption='-interaction=nonstopmode -halt-on-error' -view=none -pvc"
 
     alias sup='RBENV_VERSION=2.3.1 sup'
-
 
     [[ $(type rm) == "*alias*" ]] && unalias rm 2>&1 > /dev/null || true
     # Interactive rm function: always show what is going to be removed
@@ -145,6 +145,7 @@ alias vd='sudo vpnc-disconnect'
 
 # Private VPN
 alias privatevpn="sudo openvpn --config /etc/privatevpn.conf"
+alias intigritivpn="sudo openvpn --config /etc/privatevpn-intigriti.conf"
 
 # I AM A MONSTER
 #alias emacs='emacsclient -t -s /tmp/emacs1000/server'
@@ -171,7 +172,6 @@ alias gco='git checkout'                # Checkout
 alias gcob='git checkout -b'            # Checkout to a new branch
 alias gpp='git pull && git push'        # Never forget to pull first
 alias gpu='git push -u origin $(git status -sb | head -n1 | cut -c 4-)' # git push -u origin <BRANCHNAME>
-alias gppr='git pull --rebase && git push' # Pull with rebase
 alias gpf='git push --force-with-lease && echo "YOU MONSTER!"' # A cleaner alternative
 alias gl="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all" # Pretty logs
 
@@ -205,15 +205,8 @@ alias df="df -h"
 
 # Other
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
-alias bc='qalc'            #  Qalculate! https://qalculate.github.io/
+alias q='qalc'            #  Qalculate! https://qalculate.github.io/
 alias off='sudo poweroff'  #  Don't accidentally shut down severs
-
-# Calculate stuff with bc faster
-# Usage: ebc '1 + 1'
-ebc() {
-    # qalc is better
-    echo $1 | qalq
-}
 
 # Initialize z
 source "$HOME/.local/bin/z.sh"
@@ -234,6 +227,9 @@ eval "$(anyenv init -)"     2> /dev/null
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# Go stuff
+export GOPATH="/home/rien/Development/Go/"
 
 # Environment variables
 export DEFAULT_USER=rien

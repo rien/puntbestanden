@@ -4,7 +4,7 @@ filetype off
 " plug: curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-
+Plug 'editorconfig/editorconfig-vim'
 Plug 'dhruvasagar/vim-table-mode'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'blueshirts/darcula'
@@ -29,6 +29,16 @@ Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'eagletmt/ghcmod-vim'
 Plug 'isRuslan/vim-es6'
+Plug 'sebastianmarkow/deoplete-rust'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+Plug 'junegunn/fzf'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -91,6 +101,11 @@ set linebreak
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set colorcolumn=80
+
+" Allow project-specific .vimrc files, but disable unsafe commands
+set exrc
+set secure
 
 " display tabs with a leading \cdot
 " trailing whitespace looks like \cdot
@@ -146,10 +161,18 @@ function! s:check_back_space() abort "{{{
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
+" Language Server config
 
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls']
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 " Rust
 let g:ycm_rust_src_path='/usr/src/rust/src'
+"let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
 
 filetype plugin indent on
 

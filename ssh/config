@@ -1,3 +1,13 @@
+host colfax
+    User u21874
+    IdentityFile ~/.ssh/colfax-access-key-21874
+    ProxyCommand ssh -T -i ~/.ssh/colfax-access-key-21874 guest@cluster.colfaxresearch.com
+
+host moriarty
+    hostname moriarty.ugent.be
+    port 4840
+    user bmesuere
+
 host adler a
     hostname adler.ugent.be
     port 4840

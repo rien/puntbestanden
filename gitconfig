@@ -1,7 +1,7 @@
 [user]
     name = Rien Maertens
-    email = maertensrien@gmail.com
-    signingkey = 943CAB70C511D23C
+    email = rien.maertens@posteo.be
+    signingkey = 6EFE691C8362F089BB02C2936D876BD313662F0E
 [core]
     editor = nvim
 	excludesfile = /home/rien/.gitignore

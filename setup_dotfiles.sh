@@ -71,9 +71,6 @@ dotfiles=(
     profile
     rubocop.yml
     ssh/config
-    services/mail/run
-    services/mail/mail
-    services/mail/log/run
     tmux.conf
     xinitrc
     xprofile
@@ -87,6 +84,9 @@ for dotfile in "${dotfiles[@]}"; do
     mkdir -p "$(dirname "$HOME/.$dotfile")"
     ln -vsfnT "$DEST/$dotfile" "$HOME/.$dotfile"
 done
+
+echo 'Link userservices'
+ln -vsfnT "$DEST/services" "$HOME/services"
 
 echo 'Fix permissions of .ssh/config'
 chmod 644 "$DEST/ssh/config"

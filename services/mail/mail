@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# check for internet connection
+ip route ls | grep -v '' && exit 1
+
+# check if the gpg-agent is running
+pgrep gpg-agent >/dev/null || exit 2
+
+failure() {
+    status="$?"
+    notify-send -u critical "There was a problem with syncmail"
+    echo "syncmail exited with status code $status"
+}
+
+syncmail || failure
+
+exec sleep 3m

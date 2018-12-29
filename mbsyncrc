@@ -1,0 +1,141 @@
+#
+# Gmail maertensrien@gmail.com
+#
+
+IMAPAccount     maertensrien-gmail
+Host            "imap.gmail.com"
+User            "maertensrien@gmail.com"
+PassCmd         "pass show Mail/gmail.com/maertensrien-offlineimap | head -n1"
+SSLType         "IMAPS"
+CertificateFile "/etc/ssl/certs/ca-certificates.crt"
+
+IMAPStore maertensrien-gmail-remote
+Account   "maertensrien-gmail"
+
+MaildirStore maertensrien-gmail-local
+Path         "/home/rien/mail/maertensrien-gmail/"
+Inbox        "/home/rien/mail/maertensrien-gmail/Inbox"
+
+Channel   maertensrien-gmail-inbox
+Master    ":maertensrien-gmail-remote:"
+Slave     ":maertensrien-gmail-local:"
+Create    "Slave"
+Pattern   "INBOX"
+SyncState "*"
+
+Channel   maertensrien-gmail-all
+Master    ":maertensrien-gmail-remote:[Gmail]/All Mail"
+Slave     ":maertensrien-gmail-local:All"
+Create    "Slave"
+SyncState "*"
+
+Channel   maertensrien-gmail-sent
+Master    ":maertensrien-gmail-remote:[Gmail]/Sent Mail"
+Slave     ":maertensrien-gmail-local:Sent"
+Create    "Slave"
+SyncState "*"
+
+Channel   maertensrien-gmail-trash
+Master    ":maertensrien-gmail-remote:[Gmail]/Bin"
+Slave     ":maertensrien-gmail-local:Trash"
+Create    "Slave"
+SyncState "*"
+
+Group   maertensrien-gmail
+Channel "maertensrien-gmail-inbox"
+Channel "maertensrien-gmail-sent"
+Channel "maertensrien-gmail-all"
+Channel "maertensrien-gmail-trash"
+
+#
+# UGent rien.maertens@ugent.be
+#
+
+IMAPAccount     ugent
+Host            "outlook.office365.com"
+User            "rien.maertens@ugent.be"
+PassCmd         "pass show Edu/ugent.be/rbmaerte | head -n1"
+AuthMechs       "PLAIN"
+SSLTYPE         "IMAPS"
+CertificateFile "/etc/ssl/certs/ca-certificates.crt"
+
+IMAPStore ugent-remote
+Account   "ugent"
+
+MaildirStore ugent-local
+Path         "/home/rien/mail/ugent/"
+Inbox        "/home/rien/mail/ugent/Inbox"
+Trash        "/home/rien/mail/ugent/Trash"
+SubFolders   "Verbatim"
+
+
+Channel   ugent-inbox
+Master    ":ugent-remote:Inbox"
+Slave     ":ugent-local:"
+Create    "Slave"
+SyncState "*"
+
+Channel   ugent-sent
+Master    ":ugent-remote:Sent Items"
+Slave     ":ugent-local:Sent"
+Create    "Slave"
+SyncState "*"
+
+Channel   ugent-trash
+Master    ":ugent-remote:Trash"
+Slave     ":ugent-local:Trash"
+Create    "Slave"
+SyncState "*"
+
+Group   ugent
+Channel "ugent-inbox"
+Channel "ugent-sent"
+Channel "ugent-trash"
+
+#
+# Posteo
+#
+
+IMAPAccount     posteo
+Host            "posteo.de"
+User            "rien@posteo.net"
+PassCmd         "pass show Mail/posteo.de/rien@posteo.net | head -n1"
+SSLTYPE         "IMAPS"
+CertificateFile "/etc/ssl/certs/ca-certificates.crt"
+
+IMAPStore posteo-remote
+Account   "posteo"
+
+MaildirStore posteo-local
+Path         "/home/rien/mail/posteo/"
+Inbox        "/home/rien/mail/posteo/Inbox"
+
+Channel   posteo-inbox
+Master    ":posteo-remote:Inbox"
+Slave     ":posteo-local:"
+Create    "Slave"
+SyncState "*"
+
+Channel   posteo-sent
+Master    ":posteo-remote:Sent"
+Slave     ":posteo-local:Sent"
+Create    "Slave"
+SyncState "*"
+
+Channel   posteo-draft
+Master    ":posteo-remote:Drafts"
+Slave     ":posteo-local:Drafts"
+Create    "Slave"
+SyncState "*"
+
+Channel   posteo-trash
+Master    ":posteo-remote:Trash"
+Slave     ":posteo-local:Trash"
+Create    "Slave"
+SyncState "*"
+
+Group   posteo
+Channel "posteo-inbox"
+Channel "posteo-sent"
+Channel "posteo-trash"
+Channel "posteo-draft"

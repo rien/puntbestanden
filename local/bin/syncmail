@@ -1,0 +1,40 @@
+#!/bin/bash
+set -eo pipefail
+
+echo "[$(date)] === Starting mail synchronization ==="
+
+cd /home/rien/mail/
+
+# Sync mails
+# config: ~/.mbsyncrc
+echo "[$(date)] mbsync"
+mbsync -qqVa
+
+# Index new mails with notmuch
+# config: ~/.notmuch-config
+echo "[$(date)] notmuch new"
+notmuch new 2>&1 | grep -v '^Note: Ignoring non-mail file'
+
+# Add tags according to which mailbox the mails are in
+echo "[$(date)] notmuch tag (ugent posteo gmail)"
+notmuch tag +ugent -- tag:new folder:/^ugent/
+notmuch tag +posteo -- tag:new folder:/^posteo/
+notmuch tag +gmail -- tag:new folder:/^maertensrien-gmail/
+
+# Post-processing
+# config: ~/.config/afew/config
+echo "[$(date)] afew"
+afew -v --tag --new
+
+# Create notmuch backup
+echo "[$(date)] notmuch dump"
+notmuch dump --output=notmuch-dump.txt
+
+# Stage and commit changes
+echo "[$(date)] Commit changes, if any"
+if [ "$(git status --porcelain)" ]; then
+    git add --all
+    git commit -m "Autocommit $(date)"
+fi
+
+echo "[$(date)] === Mail synchronization complete ==="

@@ -1,0 +1,4 @@
+#!/bin/sh
+[ -d /home/rien/log/mail ] || mkdir -p /home/rien/log/mail
+exec svlogd -ttt /home/rien/log/mail
+

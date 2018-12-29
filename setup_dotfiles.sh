@@ -53,6 +53,9 @@ dotfiles=(
     bash_profile
     bashrc
     completions
+    config/afew/config
+    config/alot/config
+    config/alot/hooks.py
     config/mpv/mpv.conf
     config/nvim/init.vim
     gdbinit
@@ -61,10 +64,16 @@ dotfiles=(
     gitconfig
     gitignore
     inputrc
+    mbsyncrc
     moc/config
+    msmtprc
+    notmuch-config
     profile
     rubocop.yml
     ssh/config
+    services/mail/run
+    services/mail/mail
+    services/mail/log/run
     tmux.conf
     xinitrc
     xprofile
@@ -76,7 +85,7 @@ dotfiles=(
 )
 for dotfile in "${dotfiles[@]}"; do
     mkdir -p "$(dirname "$HOME/.$dotfile")"
-    ln -sfnT "$DEST/$dotfile" "$HOME/.$dotfile"
+    ln -vsfnT "$DEST/$dotfile" "$HOME/.$dotfile"
 done
 
 echo 'Fix permissions of .ssh/config'

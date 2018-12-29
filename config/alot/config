@@ -1,0 +1,53 @@
+initial_command = "search tag:inbox"
+prefer_plaintext = True
+editor_cmd = "vim"
+bug_on_exit = True
+
+[bindings]
+    0 = taglist
+    1 = search tag:inbox
+    2 = search tag:sent
+    3 = search *
+    4 = search tag:posteo
+    5 = search tag:ugent
+    6 = search tag:gmail
+    r = refresh
+
+    [[search]]
+        x = toggletags killed
+        & =
+        ! =
+
+    [[thread]]
+        a = toggletags inbox
+        A = untag inbox ; bclose ; refresh
+        n = move next
+        N = move previous
+
+
+
+
+[accounts]
+    [[posteo]]
+        realname = Rien Maertens
+        address = rien@posteo.net
+        alias_regexp = rien\+.+@posteo.net
+        sendmail_command = msmtp --account=posteo -t
+        sent_box = maildir:///home/rien/mail/posteo/Sent
+        draft_box = maildir:///home/rien/mail/posteo/Drafts
+
+    [[maertensrien-gmail]]
+        realname = Rien Maertens
+        address = maertensrien@gmail.com
+        alias_regexp = maertensrien\+.+@gmail.com
+        sendmail_command = msmtp --account=maertensrien-gmail -t
+        sent_box = maildir:///home/rien/mail/maertensrien-gmail/Sent
+        draft_box = maildir:///home/rien/mail/maertensrien-gmail/Drafts
+
+    [[ugent]]
+        realname = Rien Maertens
+        address = rien.maertens@ugent.be
+        sendmail_command = msmtp --account=ugent -t
+        sent_box = maildir:///home/rien/mail/ugent/Sent
+        draft_box = maildir:///home/rien/mail/ugent/Drafts
+

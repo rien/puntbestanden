@@ -1,0 +1,21 @@
+# Marks mail with 'spam' header
+[SpamFilter]
+
+# UGent sometimes still sends spam
+# but with [SPAM] as subject ...
+[HeaderMatchingFilter.1]
+header = Subject
+pattern = ^\[SPAM\]
+tags = +spam
+
+# Adds the 'killed' tag to mails within a thread that
+# has been tagged with 'killed'.
+[KillThreadsFilter]
+
+# Tag mails from one of my adresses as 'sent'
+# and remove them from 'new'
+[ArchiveSentMailsFilter]
+sent_tag=sent
+
+# Removes the 'new' tag and adds the 'inbox' tag
+[InboxFilter]

@@ -97,7 +97,6 @@ set number
 set showcmd
 set autoread
 set scrolloff=8
-set linebreak
 set expandtab
 set tabstop=4
 set shiftwidth=4

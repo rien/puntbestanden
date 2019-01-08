@@ -1,3 +1,17 @@
+host koffiemasjien koffie k
+    hostname 157.193.73.227
+    user root
+
+host bang b
+    hostname bang.rxn.be
+    port 9450
+    user root
+
+host tilde
+    hostname rxn.be
+    port 9452
+    user root
+
 host colfax
     User u21874
     IdentityFile ~/.ssh/colfax-access-key-21874
@@ -37,11 +51,6 @@ host naos
     hostname naos.ugent.be
     port 4840
     user dodona
-
-host kalut
-    hostname rxn.be
-    port 9451
-    user rien
 
 host hpc
     hostname login.hpc.ugent.be
@@ -103,14 +112,14 @@ host king k
     port 2222
     user root
 
-host adams a
+host adams
     hostname adams.ugent.be
     port 2222
     user root
 
 host masjiene m
-    hostname masjiene.rxn.be
-    port 9453
+    hostname m.rxn.be
+    port 2222
     user root
 
 host gunnar droplet do g

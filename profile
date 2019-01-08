@@ -13,6 +13,7 @@ PATHS=(
     "/home/rien/.anyenv/bin"
     "/home/rien/Development/Android/SDK/tools/bin"
     "/home/rien/Development/Android/SDK/platform-tools"
+    "/usr/share/apache-maven/bin"
 )
 
 # Ofcourse, append it to the original PATH
@@ -35,7 +36,6 @@ then
         exit
     fi
 
-    ZSH_TMUX_AUTOSTART=false
     [[ $TMUX == "" ]] && tmux new-session -A
 
     alias windoos='/home/rien/virtual/win10/windoos.sh'

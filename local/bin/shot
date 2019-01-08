@@ -2,8 +2,8 @@
 set -e
 
 user="screenshot"
-hostname="gunnar"
-location="/srv/http/screenshots"
+hostname="bang"
+location="/srv/http/i.rxn.be/public"
 webadress="https://i.rxn.be"
 
 # Make a random file

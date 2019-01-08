@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # check for internet connection
-ip route ls | grep -v '' && exit 1
+ip route ls | grep 'default' > /dev/null || exit 1
 
 # check if the gpg-agent is running
 pgrep gpg-agent >/dev/null || exit 2

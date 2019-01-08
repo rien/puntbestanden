@@ -5,3 +5,7 @@ set colored-stats on
 "\e[A":history-search-backward
 ## arrow down
 "\e[B":history-search-forward
+
+set completion-ignore-case on
+set show-all-if-ambiguous on
+

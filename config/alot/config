@@ -2,7 +2,6 @@ initial_command = "search tag:inbox"
 prefer_plaintext = True
 editor_cmd = "vim"
 bug_on_exit = True
-sign_by_default = True
 
 [bindings]
     0 = taglist
@@ -25,15 +24,13 @@ sign_by_default = True
         n = move next
         N = move previous
 
-
-
-
 [accounts]
     [[posteo]]
         realname = Rien Maertens
         address = rien.maertens@posteo.be
-        alias_regexp = rien.maertens\+.+@posteo.be
         gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
+        sign_by_default = True
+        alias_regexp = rien.maertens\+.+@posteo.be
         sendmail_command = msmtp --account=posteo -t
         sent_box = maildir:///home/rien/mail/posteo/Sent
         draft_box = maildir:///home/rien/mail/posteo/Drafts
@@ -41,8 +38,9 @@ sign_by_default = True
     [[maertensrien-gmail]]
         realname = Rien Maertens
         address = maertensrien@gmail.com
-        alias_regexp = maertensrien\+.+@gmail.com
         gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
+        sign_by_default = True
+        alias_regexp = maertensrien\+.+@gmail.com
         sendmail_command = msmtp --account=maertensrien-gmail -t
         sent_box = maildir:///home/rien/mail/maertensrien-gmail/Sent
         draft_box = maildir:///home/rien/mail/maertensrien-gmail/Drafts
@@ -50,8 +48,14 @@ sign_by_default = True
     [[ugent]]
         realname = Rien Maertens
         address = rien.maertens@ugent.be
-        sendmail_command = msmtp --account=ugent -t
         gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
+        sign_by_default = True
+        sendmail_command = msmtp --account=ugent -t
         sent_box = maildir:///home/rien/mail/ugent/Sent
         draft_box = maildir:///home/rien/mail/ugent/Drafts
+
+    [[rxn]]
+        realname = Rien
+        address = rien@rxn.be
+        sendmail_command = msmtp --account=rxn -t
 

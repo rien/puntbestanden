@@ -2,6 +2,8 @@
 .idea/
 .gdb_history
 
+_minted-*
+
 # project specific vim files
 .nvimrc
 
@@ -36,8 +38,6 @@ Cargo.lock
 *.dvi
 *.xdv
 *-converted-to.*
-*.ps
-*.eps
 *.bbl
 *.bcf
 *.blg

@@ -1,19 +1,16 @@
 
-MANPATH="/home/rien/.local/share/man:$MANPATH"
+export MANPATH="/home/rien/.local/man/:/home/rien/.local/share/man:$MANPATH"
 
-JAVA_HOME="/usr/lib/jvm/openjdk"
-_JAVA_AWT_WM_NONREPARENTING=1
+export JAVA_HOME="/usr/lib/jvm/openjdk"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 
 # A more unclutttered way of defining custom PATHs
 PATHS=(
     "/home/rien/.local/bin/"
     "/home/rien/.cargo/bin"
-    # "/home/rien/.cabal/bin"
     "/home/rien/.rbenv/bin"
-    "/home/rien/.anyenv/bin"
-    "/home/rien/Development/Android/SDK/tools/bin"
-    "/home/rien/Development/Android/SDK/platform-tools"
-    "/usr/share/apache-maven/bin"
+    "/home/rien/.crenv/bin"
 )
 
 # Ofcourse, append it to the original PATH
@@ -36,9 +33,10 @@ then
         exit
     fi
 
-    [[ $TMUX == "" ]] && tmux new-session -A
+    [[ $TMUX == "" ]] && tmux new-session -A && export TERM=screen-256color
 
     alias windoos='/home/rien/virtual/win10/windoos.sh'
+    alias murder='pkill -9'
 
     # Thesis
     alias thesis='cd /home/rien/Unipept/thesis'
@@ -68,6 +66,8 @@ then
     alias mpz='mpc -h hoek'
     alias mpr='mpc -h mpd.rumores.eu -p 6612 -P zeusisdemaks'
     alias cammie='curl http://kelder.zeus.ugent.be/webcam/video/mjpg.cgi | mpv --no-correct-pts --fps 5 -'
+    alias resto='curl https://mattermore.zeus.gent/resto'
+    alias zeuspass='PASSWORD_STORE_DIR=~/.zeus-wachtwoord-winkel pass'
 
     # CPU Commands
     alias watchcpu='watch grep \"cpu MHz\" /proc/cpuinfo'
@@ -90,11 +90,9 @@ then
     alias goodmorning='xrandr  --output DP1 --auto --above eDP1'
     alias goodevening='xrandr  --auto'
 
-    alias zeuspass='PASSWORD_STORE_DIR=~/.zeus-password-store pass'
-
     alias latexlive="latexmk -xelatex -latexoption='-interaction=nonstopmode -halt-on-error' -view=none -pvc"
 
-    alias sup='RBENV_VERSION=2.3.1 sup'
+    alias irc="ssh -t irc@bang abduco -A irc"
 
     [[ $(type rm) == "*alias*" ]] && unalias rm 2>&1 > /dev/null || true
     # Interactive rm function: always show what is going to be removed
@@ -222,7 +220,7 @@ d() {
 # Init some things
 eval "$(thefuck --alias)"   2> /dev/null
 eval "$(rbenv init -)"      2> /dev/null
-eval "$(anyenv init -)"     2> /dev/null
+eval "$(crenv init -)"      2> /dev/null
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -230,6 +228,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Go stuff
 export GOPATH="/home/rien/Development/Go/"
+
+# John The Ripper
+export JOHN=/home/rien/code/tools/john/run/
+alias john="$JOHN/john"
 
 # Environment variables
 export DEFAULT_USER=rien

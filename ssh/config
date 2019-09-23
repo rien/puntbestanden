@@ -1,6 +1,71 @@
-host koffiemasjien koffie k
-    hostname 157.193.73.227
-    user root
+host pandora
+    hostname pandora.ugent.be
+    user dodona
+    port 4840
+
+host phocus
+    hostname phocus.ugent.be
+    user dodona
+    port 4840
+
+host asimov
+    hostname asimov.ugent.be
+    user rbm
+    port 2222
+
+host tantalus
+    hostname tantalus.ugent.be
+    user dodona
+    port 4840
+
+host sisyphus
+    hostname sisyphus.ugent.be
+    user dodona
+    port 4840
+
+host elysium
+    hostname elysium.ugent.be
+    user dodona
+    port 4840
+
+host tityos
+    hostname tityos.ugent.be
+    user dodona
+    port 4840
+
+host salmoneu
+    hostname salmoneu.ugent.be
+    user dodona
+    port 4840
+
+host ixion
+    hostname ixion.ugent.be
+    user dodona
+    port 4840
+
+host mr-brown brown gyrid2
+    hostname 10.0.20.2
+    user zeus
+
+host mr-white white gyrid3
+    hostname 10.0.20.3
+    user zeus
+
+host nice-guy nice gyrid4
+    hostname 10.0.20.4
+    user zeus
+
+host mr-orange orange gyrid5
+    hostname 10.0.20.5
+    user zeus
+
+host mr-blue blue gyrid6
+    hostname 10.0.20.6
+    user zeus
+
+host subgit
+    user git
+    hostname subgit.ugent.be
 
 host bang b
     hostname bang.rxn.be
@@ -72,10 +137,10 @@ host beata
     port 9450
     user root
 
-host wells w
+host kelder
     hostname kelder.zeus.ugent.be
     port 2222
-    user rienspy
+    user root
 
 host wells.local
     hostname wells
@@ -116,6 +181,11 @@ host adams
     hostname adams.ugent.be
     port 2222
     user root
+
+host masjiene-local ml
+    hostname 192.168.1.33
+    port 2222
+    user rien
 
 host masjiene m
     hostname m.rxn.be

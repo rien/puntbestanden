@@ -8,7 +8,6 @@ pgrep gpg-agent >/dev/null || exit 2
 
 failure() {
     status="$?"
-    notify-send -u critical "There was a problem with syncmail"
     echo "syncmail exited with status code $status"
 }
 

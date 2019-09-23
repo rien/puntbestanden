@@ -2,6 +2,7 @@ initial_command = "search tag:inbox"
 prefer_plaintext = True
 editor_cmd = "vim"
 bug_on_exit = True
+attachment_prefix="/home/rien/Downloads/"
 
 [bindings]
     0 = taglist
@@ -23,6 +24,8 @@ bug_on_exit = True
         A = untag inbox ; bclose ; refresh
         n = move next
         N = move previous
+        r = reply --all
+        R = reply
 
 [accounts]
     [[posteo]]
@@ -34,6 +37,13 @@ bug_on_exit = True
         sendmail_command = msmtp --account=posteo -t
         sent_box = maildir:///home/rien/mail/posteo/Sent
         draft_box = maildir:///home/rien/mail/posteo/Drafts
+        signature = "~/.config/alot/signature-normal.sig"
+
+        [[[abook]]]
+            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
+            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
+            shellcommand_external_filtering = False
+            ignorecase = True
 
     [[maertensrien-gmail]]
         realname = Rien Maertens
@@ -44,6 +54,13 @@ bug_on_exit = True
         sendmail_command = msmtp --account=maertensrien-gmail -t
         sent_box = maildir:///home/rien/mail/maertensrien-gmail/Sent
         draft_box = maildir:///home/rien/mail/maertensrien-gmail/Drafts
+        signature = "~/.config/alot/signature-normal.sig"
+
+        [[[abook]]]
+            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
+            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
+            shellcommand_external_filtering = False
+            ignorecase = True
 
     [[ugent]]
         realname = Rien Maertens
@@ -53,9 +70,24 @@ bug_on_exit = True
         sendmail_command = msmtp --account=ugent -t
         sent_box = maildir:///home/rien/mail/ugent/Sent
         draft_box = maildir:///home/rien/mail/ugent/Drafts
+        signature = "~/.config/alot/signature-ugent.sig"
+
+        [[[abook]]]
+            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
+            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
+            shellcommand_external_filtering = False
+            ignorecase = True
 
     [[rxn]]
         realname = Rien
         address = rien@rxn.be
         sendmail_command = msmtp --account=rxn -t
+
+    [[maertens-io]]
+        realname = Rien Maertens
+        address = rien@maertens.io
+        gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
+        sign_by_default = True
+        alias_regexp = rien@\+.+@maertens.io
+        sendmail_command = msmtp --account=maertens-io -t
 

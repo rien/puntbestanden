@@ -32,8 +32,8 @@ path=/home/rien/mail
 
 [user]
 name=Rien Maertens
-primary_email=maertensrien@gmail.com
-other_email=rienspy@gmail.com;rien.maertens@ugent.be;rien.maertens@ugent.be
+primary_email=rien.maertens@posteo.be
+other_email=rienspy@gmail.com;rien.maertens@ugent.be;rien.maertens@ugent.be;maertensrien@gmail.com
 
 # Configuration for "notmuch new"
 #

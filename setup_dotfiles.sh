@@ -39,7 +39,7 @@ echo 'Ensuring $HOME/.config exists...'
 mkdir -p "$HOME/.config"
 
 echo 'Ensuring repo exist locally...'
-ensure_repo_exists_and_has_latest_version "$REPO" "$DEST"
+#ensure_repo_exists_and_has_latest_version "$REPO" "$DEST"
 
 # echo 'Ensuring Tmux Plugin Manager is installed...'
 # ensure_repo_exists_and_has_latest_version "$TPM_REPO" "$TPM_DEST"
@@ -50,6 +50,7 @@ curl -fLo "$VIM_PLUG_DEST" --create-dirs "$VIM_PLUG_SCRIPT"
 echo 'Linking dotfiles...'
 dotfiles=(
     Xresources
+    bash_completion
     bash_profile
     bashrc
     completions

@@ -33,7 +33,7 @@ then
         exit
     fi
 
-    [[ $TMUX == "" ]] && tmux new-session -A && export TERM=screen-256color
+    [[ $TMUX == "" ]] && tmux new-session -A
 
     alias windoos='/home/rien/virtual/win10/windoos.sh'
     alias murder='pkill -9'

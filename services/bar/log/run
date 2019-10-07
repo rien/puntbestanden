@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -d /home/rien/log/bar ] || mkdir -p /home/rien/log/bar
+exec svlogd -ttt /home/rien/log/bar

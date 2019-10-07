@@ -12,4 +12,4 @@ This repository is (partially) licensed under the [Unlicense](http://unlicense.o
 
 I do however have some pieces of code copied from friends. If they have a license that's different from mine, it will be clearly stated and the license can be found in the `legal/` folder.
 
-I signed the (un)license with GPG, so You should be able to verify my signature using `gpg --verify UNLICENSE.sig UNLICENSE`.
+I signed the (un)license with GPG, so You should be able to verify my signature using `gpg --verify LICENSE.sig LICENSE`.

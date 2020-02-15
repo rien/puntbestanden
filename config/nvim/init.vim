@@ -4,6 +4,10 @@ filetype off
 " plug: curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
+Plug 'Glench/vim-jinja2-syntax'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'andys8/vim-elm-syntax'
+Plug 'purescript-contrib/purescript-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'blueshirts/darcula'
@@ -25,7 +29,7 @@ Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'isRuslan/vim-es6'
 Plug 'sebastianmarkow/deoplete-rust'
-Plug 'leafgarland/typescript-vim'
+"Plug 'leafgarland/typescript-vim'
 Plug 'dense-analysis/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/fzf'
@@ -33,7 +37,6 @@ Plug 'LnL7/vim-nix'
 
 if has('nvim')
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   "Plug 'Shougo/denite.nvim'
 endif
@@ -45,6 +48,7 @@ set autoread
 autocmd FileType mail call Text()
 autocmd FileType markdown call Text()
 autocmd FileType tex call Text()
+autocmd FileType gitcommit call Text()
 autocmd FileType mail set colorcolumn=72
 
 

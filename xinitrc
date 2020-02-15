@@ -4,7 +4,7 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 # Background
-feh --bg-fill ~/Pictures/mosaic_small169.png || true
+feh --recursive --randomize --bg-fill "$HOME/Pictures/Wallpapers/Simon Stålenhag/" || true
 
 # 'Reset' display and fix whites
 xrandr --output eDP1 --off \

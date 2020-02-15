@@ -1,3 +1,4 @@
+shopt -s globstar # Make ** work
 
 export MANPATH="/home/rien/.local/man/:/home/rien/.local/share/man:$MANPATH"
 
@@ -11,6 +12,7 @@ PATHS=(
     "/home/rien/.cargo/bin"
     "/home/rien/.rbenv/bin"
     "/home/rien/.crenv/bin"
+    "/home/rien/.yarn/bin"
 )
 
 # Ofcourse, append it to the original PATH
@@ -86,9 +88,6 @@ then
 
     alias sun='xrandr --output eDP1 --brightness 1.1 && xrandr --output eDP1 --gamma 1.5:1.5:1.5'
     alias nosun='xrandr --output eDP1 --brightness 0.9 && xrandr --output eDP1 --gamma 1:1:1'
-
-    alias goodmorning='xrandr  --output DP1 --auto --above eDP1'
-    alias goodevening='xrandr  --auto'
 
     alias latexlive="latexmk -xelatex -latexoption='-interaction=nonstopmode -halt-on-error' -view=none -pvc"
 
@@ -239,3 +238,4 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export PAGER=/usr/bin/less
 export TERMINAL=/home/rien/.local/bin/st
+export LEDGER_FILE=/home/rien/life/ledger/journal

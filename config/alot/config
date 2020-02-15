@@ -12,6 +12,7 @@ attachment_prefix="/home/rien/Downloads/"
     4 = search tag:posteo
     5 = search tag:ugent
     6 = search tag:gmail
+    7 = search tag:feed
     r = refresh
 
     [[search]]

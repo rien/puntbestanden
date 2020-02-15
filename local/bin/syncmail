@@ -1,6 +1,4 @@
 #!/bin/bash
-set -eo pipefail
-
 echo "[$(date)] === Starting mail synchronization ==="
 
 cd /home/rien/mail/
@@ -9,6 +7,15 @@ cd /home/rien/mail/
 # config: ~/.mbsyncrc
 echo "[$(date)] mbsync"
 mbsync -qqVa
+
+# Fetch feeds
+# Config: ~/.sfeed/sfeedrc
+echo "[$(date)] sfeed"
+sfeed_update
+sfeed_mbox /home/rien/.sfeed/feeds/* > /home/rien/.sfeed/feeds.mbox
+# Convert mbox to maildir format
+echo "[$(date)] fdm"
+fdm -q -f /home/rien/.sfeed/fdm.conf fetch
 
 # Index new mails with notmuch
 # config: ~/.notmuch-config
@@ -20,6 +27,7 @@ echo "[$(date)] notmuch tag (ugent posteo gmail)"
 notmuch tag +ugent -- tag:new folder:/^ugent/
 notmuch tag +posteo -- tag:new folder:/^posteo/
 notmuch tag +gmail -- tag:new folder:/^maertensrien-gmail/
+notmuch tag +feed +inbox -new -unread -- tag:new folder:/^feeds/
 
 # Post-processing
 # config: ~/.config/afew/config

@@ -50,3 +50,6 @@ Cargo.lock
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+
+*.o
+*.a

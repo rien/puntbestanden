@@ -29,6 +29,22 @@ attachment_prefix="/home/rien/Downloads/"
         R = reply
 
 [accounts]
+    [[ugent]]
+        realname = Rien Maertens
+        address = rien.maertens@ugent.be
+        gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
+        sign_by_default = True
+        sendmail_command = msmtp --account=ugent -t
+        sent_box = maildir:///home/rien/mail/ugent/Sent
+        draft_box = maildir:///home/rien/mail/ugent/Drafts
+        signature = "~/.config/alot/signature-ugent.sig"
+
+        [[[abook]]]
+            type = shellcommand
+            command = khard email --parsable
+            regexp = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
+            ignorecase = True
+
     [[posteo]]
         realname = Rien Maertens
         address = rien.maertens@posteo.be
@@ -41,9 +57,9 @@ attachment_prefix="/home/rien/Downloads/"
         signature = "~/.config/alot/signature-normal.sig"
 
         [[[abook]]]
-            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
-            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
-            shellcommand_external_filtering = False
+            type = shellcommand
+            command = khard email --parsable
+            regexp = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
             ignorecase = True
 
     [[maertensrien-gmail]]
@@ -58,25 +74,9 @@ attachment_prefix="/home/rien/Downloads/"
         signature = "~/.config/alot/signature-normal.sig"
 
         [[[abook]]]
-            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
-            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
-            shellcommand_external_filtering = False
-            ignorecase = True
-
-    [[ugent]]
-        realname = Rien Maertens
-        address = rien.maertens@ugent.be
-        gpg_key = 6EFE691C8362F089BB02C2936D876BD313662F0E
-        sign_by_default = True
-        sendmail_command = msmtp --account=ugent -t
-        sent_box = maildir:///home/rien/mail/ugent/Sent
-        draft_box = maildir:///home/rien/mail/ugent/Drafts
-        signature = "~/.config/alot/signature-ugent.sig"
-
-        [[[abook]]]
-            command = 'notmuch address --format=json --output=recipients --output=sender date:1Y..'
-            regexp = '\[?{"name": "(?P<name>.*)", "address": "(?P<email>.+)", "name-addr": ".*"}[,\]]?'
-            shellcommand_external_filtering = False
+            type = shellcommand
+            command = khard email --parsable
+            regexp = '^(?P<email>[^@]+@[^\t]+)\t+(?P<name>[^\t]+)'
             ignorecase = True
 
     [[rxn]]

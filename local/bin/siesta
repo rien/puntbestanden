@@ -1,4 +1,14 @@
 #!/bin/bash
-# Lock screen and go to sleep
-lock.sh &
-sleep 1 && sudo zzz $@
+
+# Forget cached gpg password
+pkill -SIGHUP gpg-agent
+
+# Re-enable lockscreen (if disabled)
+xautolock -enable
+
+# Lock screen
+lockscreen &
+
+# Go to sleep
+sleep 1
+sudo zzz $@

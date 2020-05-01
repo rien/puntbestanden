@@ -27,7 +27,7 @@ echo "[$(date)] notmuch tag (ugent posteo gmail)"
 notmuch tag +ugent -- tag:new folder:/^ugent/
 notmuch tag +posteo -- tag:new folder:/^posteo/
 notmuch tag +gmail -- tag:new folder:/^maertensrien-gmail/
-notmuch tag +feed +inbox -new -unread -- tag:new folder:/^feeds/
+notmuch tag +feed +inbox -new -- tag:new folder:/^feeds/
 
 # Post-processing
 # config: ~/.config/afew/config

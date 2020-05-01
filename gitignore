@@ -1,6 +1,12 @@
+*.byebug_history
+*.zip
 *.iml
 .idea/
 .gdb_history
+__pycache__/
+
+TODO.md
+samples/ad1
 
 _minted-*
 
@@ -28,7 +34,6 @@ Cargo.lock
 *.log
 *.lot
 *.fls
-*.out
 *.toc
 *.fmt
 *.fot

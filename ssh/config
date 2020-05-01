@@ -2,18 +2,20 @@ host mohowzeg.kot
     hostname 10.0.1.23
     user root
 
-host mohowzeg.usb
+host mohowzeg.usb remarkable mohowzeg
     hostname 10.11.99.1
     user root
 
-host pandora
+host pandora pandora.ugent.be
     hostname pandora.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host phocus
+host phocus phocus.ugent.be
     hostname phocus.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
 host asimov
@@ -21,34 +23,40 @@ host asimov
     user rbm
     port 2222
 
-host tantalus
+host tantalus tantalus.ugent.be
     hostname tantalus.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host sisyphus
+host sisyphus sisyphus.ugent.be
     hostname sisyphus.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host elysium
+host elysium elysium.ugent.be
     hostname elysium.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host tityos
+host tityos tityos.ugent.be
     hostname tityos.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host salmoneu
+host salmoneu salmoneu.ugent.be
     hostname salmoneu.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
-host ixion
+host ixion ixion.ugent.be
     hostname ixion.ugent.be
     user dodona
+    ProxyJump naos
     port 4840
 
 host mr-brown brown gyrid2
@@ -98,6 +106,7 @@ host moriarty
 host adler a
     hostname adler.ugent.be
     port 4840
+    ProxyJump naos
     user bmesuere
 
 host herbert h
@@ -105,22 +114,25 @@ host herbert h
     port 2222
     user root
 
-Host dodona
+Host dodona dodona.ugent.be
     Hostname dodona.ugent.be
     Port 4840
+    ProxyJump naos
     User dodona
 
-Host lethe
+Host lethe lethe.ugent.be
     Hostname lethe.ugent.be
     Port 4840
+    ProxyJump naos
     User dodona
 
-Host phocus
+Host phocus phocus.ugent.be
     Hostname phocus.ugent.be
     Port 4840
+    ProxyJump naos
     User dodona
 
-host naos
+host naos naos.ugent.be
     hostname naos.ugent.be
     port 4840
     user dodona

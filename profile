@@ -35,7 +35,7 @@ then
         exit
     fi
 
-    [[ $TMUX == "" ]] && tmux new-session -A
+    [[ $TMUX == "" ]] && tmux new-session
 
     alias windoos='/home/rien/virtual/win10/windoos.sh'
     alias murder='pkill -9'

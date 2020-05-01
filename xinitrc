@@ -11,7 +11,7 @@ xrandr --output eDP1 --off \
     && xrandr --output eDP1 --mode 1920x1080 --brightness 0.9
 
 # Fix keyboard
-setxkbmap -layout us -variant alt-intl
+setxkbmap -layout us -variant alt-intl -option caps:none
 
 # Fix backlight
 xbacklight -set 100

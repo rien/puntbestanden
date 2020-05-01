@@ -22,28 +22,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-"Plug 'vim-syntastic/syntastic'
 Plug 'vim-ruby/vim-ruby'
 Plug 'rhysd/vim-crystal'
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
 Plug 'isRuslan/vim-es6'
-Plug 'sebastianmarkow/deoplete-rust'
-"Plug 'leafgarland/typescript-vim'
 Plug 'dense-analysis/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'junegunn/fzf'
 Plug 'LnL7/vim-nix'
+Plug 'digitaltoad/vim-pug'
 
 if has('nvim')
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  "Plug 'Shougo/denite.nvim'
 endif
 
 call plug#end()
 
 set autoread
+set mouse=a
 
 autocmd FileType mail call Text()
 autocmd FileType markdown call Text()
@@ -136,7 +133,7 @@ set undodir=~/.vimundo/
 
 " Other formatting
 syntax enable
-set background=dark
+set background=light
 colorscheme darcula
 set number
 set showcmd
@@ -179,9 +176,6 @@ let mapleader = '\'
 let g:tex_flavor='latex'
 let g:Tex_CompileRule_pdf='pdflatex -interaction=nonstopmode -shell-escape $*'
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-
 " == Haskell ==
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
@@ -195,23 +189,12 @@ let g:haskellmode_completion_ghc = 0
 
 "let g:ghcmod_use_basedir="/home/rien/.vim/scripts/"
 
-" Let <Tab> also do completion
-" inoremap <silent><expr> <TAB>
-"     \ pumvisible() ? "\<C-n>" :
-"     \ <SID>check_back_space() ? "\<TAB>" :
-"     \ deoplete#mappings#manual_complete()
-" function! s:check_back_space() abort "{{{
-"     let col = col('.') - 1
-"     return !col || getline('.')[col - 1]  =~ '\s'
-" endfunction"}}}
-
 " Language Server config
 
 set hidden
 
 " Rust
 " let g:ycm_rust_src_path='/usr/src/rust/src'
-"let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
 " set completeopt-=preview
 
 filetype plugin indent on
@@ -227,6 +210,7 @@ autocmd FileType eruby call TwoSpaces()
 autocmd FileType haskell call TwoSpaces()
 autocmd FileType json call TwoSpaces()
 autocmd FileType crystal call TwoSpaces()
+autocmd FileType pug call TwoSpaces()
 autocmd FileType typescript call TwoSpaces()
 
 autocmd FileType ansible set syntax=yaml

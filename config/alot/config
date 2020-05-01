@@ -84,6 +84,12 @@ attachment_prefix="/home/rien/Downloads/"
         address = rien@rxn.be
         sendmail_command = msmtp --account=rxn -t
 
+    [[kaabee]]
+        realname = Rien Maertens
+        address = rien@kaabee.be
+        sendmail_command = msmtp --account=kaabee -t
+        signature = "~/.config/alot/signature-normal.sig"
+
     [[maertens-io]]
         realname = Rien Maertens
         address = rien@maertens.io

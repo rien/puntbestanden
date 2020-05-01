@@ -3,9 +3,7 @@ feeds() {
     # get youtube Atom feed: curl -s -L 'https://www.youtube.com/user/gocoding/videos' | sfeed_web | cut -f 1
 
     feed "XKCD" "https://xkcd.com/atom.xml" "https://xkcd.com"
-    feed "Schneier on Security" "https://www.schneier.com/blog/atom.xml"
     feed "Void news" "https://voidlinux.org/atom.xml" "https://voidlinux.org"
-    feed "This week in Rust" "https://this-week-in-rust.org/rss.xml"
     feed "Nerdland Maandoverzicht" "https://feeds.soundcloud.com/users/soundcloud:users:293803449/sounds.rss"
     feed "redfast00 blog" "https://redfast00.github.io/feed.xml"
     feed "jaspervdj blog" "https://jaspervdj.be/rss.xml"

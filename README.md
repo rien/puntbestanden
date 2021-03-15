@@ -1,11 +1,6 @@
-# Rien's dotfiles
+# Rien's old dotfiles
 
-Hi, these are my dotfiles. You are free to copy, modify and ask questions about anything in this repository. You'll probably have to adjust some variables to get everything working in your environment.
-
-## Installation:
-```
-bash <(curl -sS https://raw.githubusercontent.com/rien/puntbestanden/master/setup_dotfiles.sh)
-```
+These were my old dotfiles. I have started using NixOS to configure my systems and I am loving it, so I will not be using or updating this repository anymo. Please see my [current NixOS configuration](https://github.com/rien/nixos-config) for more up-to-date dotfiles.
 
 ## License
 This repository is (partially) licensed under the [Unlicense](http://unlicense.org/) which means you can use everything in any way you want without any conditions. However, I'm not stopping you in mentioning my name in your modified copy or buying me a drink when we should meet.
